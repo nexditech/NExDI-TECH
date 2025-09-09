@@ -1,0 +1,441 @@
+        body{
+            background-color: cornflowerblue;
+            font: optional;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+    
+        header{
+            background-color: black;
+            background-image: url("header.png");
+            background-size: 200%;
+            background-position: center;
+            padding: 20px;
+            height: 300px;
+            color: gold;
+            text-align: center;
+    
+
+        }
+        header a {
+            color:rgba(224, 193, 16, 0.829);
+            text-decoration: none;
+            margin-top: 40px;
+            
+        }
+        header .moble{
+            display: none;
+        }
+        header .logo a{
+            background-image: url("logo.png");
+            background-size: 200px;
+            background-repeat: no-repeat;
+            display: inline-block;
+            height: 80px;
+            position: relative;
+            text-indent: -99999999px;
+            top: -30px;
+            width: 300px;
+            
+        } 
+        @media screen and (max-width: 715px){
+            header {
+                height: 200px;
+            }
+            header .moble{
+                display: inline-block;
+            }
+            header .desktop{
+                display: none;
+            }
+
+
+        }
+        .featurs{
+            background-color: white;
+            color: rgba(223, 190, 8, 0.87);
+            padding: 20px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            
+            
+        }
+        
+        .features figure{
+            margin: auto;
+            text-align: center;
+            width: 100px;
+            text-transform: none;
+        }
+        .features figure img{
+            border: 1px solid white;
+            border-radius: 50%;
+            box-shadow: gray  0 0 10px;
+            width: 100px;
+        }
+        
+        section{
+            background-color:rgba(202, 172, 2, 0.705);
+            color: black;
+            padding: 20px;
+            display: flex;
+            flex-direction: row;
+        }
+        div{
+            background-color: red;
+            margin: auto;
+            width: 100px;
+        }
+        ul{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        li{
+            display: inline-block;
+            margin: 20px;
+        }
+        .HH{
+            width: auto;
+            height: auto;
+            background: black;
+            background-position: center;
+            border: rgb(228, 195, 10);
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .HH a{
+            text-decoration: none;
+            color: rgb(231, 201, 26);
+        }
+        .HH:hover{
+            background-color: white;
+        }
+        footer{
+            background-color: black;
+            background-image: url("header.png");
+            background-size: 100%;
+            background-position: center;
+            padding: 20px;
+            height: 100px;
+            color: gold;
+            text-align: center;
+
+    
+        }
+        footer a{
+            color:rgba(255, 217, 0, 0.863);
+            text-decoration: none;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        .search{
+            width: 300px;
+            float: left;
+            margin-left: 0px;
+            background: transparent;
+
+        }
+        .srch{
+            font-family: 'Times New Roman', Times, serif;
+            width: 100px;
+            background: transparent;
+            bottom: 1px solid rgb(12, 12, 9);
+            color:rgba(20, 19, 14, 0.87);
+            border-right: none;
+            font-size: 16px;
+            float: left;
+            padding: 10px;
+            border-bottom-left-radius: 5px;
+            border-top-left-radius: 5px;
+
+        }
+        
+        .btn{
+            width: 100px;
+            height: 40px;
+            background: rgba(224, 193, 16, 0.829);
+            border: 2px solid rgba(26, 22, 2, 0.815);
+            color: white;
+            font-size: 15px;
+            border-top-right-radius: 5px;
+            border-top-right-radius: 5px;
+
+        }
+        .btn:focus{
+            outline: none;
+        }
+        .srch:focus{
+            outline: none;
+        }
+        .cn{
+            width: auto;
+            height: auto;
+            background: black;
+            border: rgb(228, 195, 10);
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .cn a{
+            text-decoration: none;
+            color: rgb(231, 201, 26);
+        }
+        .cn:hover{
+            background-color: white;
+        }
+        .form{
+            width: 50px;
+            height: 350px;
+            background: linear-gradient(to top, rgb(117, 100, 2)50%,rgb(117, 100, 2)50%)
+
+        }
+        .form h2{
+            width: 220px;
+            font-family: serif;
+            text-align: center;
+            color: rgb(168, 145, 13);
+            font-size: 22px;
+            background-color:black;
+            border-radius: 10px;
+            margin: 4px;
+            padding: 10px;
+        }
+
+        .form input{
+            width: 240px;
+            height: 10px;
+            background: transparent;
+            color:white;
+            border-bottom: 1px solid black;
+            border-top: none;
+            border-right: none;
+            border-left: none;
+            font-size: 15px;
+            letter-spacing: 1px;
+            margin-top: 30px;
+            font-family: serif;
+
+        }
+        .form input:focus{
+            outline: none;
+
+        }
+        ::placeholder{
+            color: white;
+            font-family: Arial;
+
+        }
+        .btnn{
+            width: 240px;
+            height: 50px;
+            color: rgb(161, 138, 3);
+            background: black;
+            border: none;
+            margin-top: 30px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.4s ease;
+
+        }
+        .btnn:hover{
+            background: white;
+            color: black;
+        }
+
+        .btnn a{
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+
+        .form .link{
+            width: 220px;
+            font-family: serif;
+            text-align: center;
+            font-size: 17px;
+            padding-top: 00px;
+            color: white;
+        }
+
+        .form .link a{
+            text-decoration: none;
+            color: rgb(155, 133, 11);
+
+        }
+
+        .liw{
+            width: 220px;
+            padding-top: 00px;
+            padding-bottom: 30px;
+            text-align: center;
+        }
+        /* Label above icons */
+.liw {
+    margin: 20px 0 15px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #555;
+    text-align: center;
+  }
+  
+  /* Social media icons row */
+  .social-login {
+    display: flex;
+    justify-content: center;   /* centers icons */
+    align-items: center;       /* vertically aligns */
+    gap: 20px;                 /* equal spacing between icons */
+    flex-wrap: nowrap;         /* keeps all in one row */
+  }
+  
+  .social-login a {
+      width: 230px;
+      text-decoration: none;
+      color: white;
+      text-align: center;
+  
+  }
+  
+  .social-login a:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+  
+  /* Brand colors */
+  .facebook { background: #1877f2; }
+  .twitter  { background: #1da1f2; }
+  .google   { background: #db4437; }
+  .linkedin { background: #0077b5; }
+  .instagram{ background: #e1306c; }
+  /* Social login row fix */
+/* Social login row */
+.social-login {
+    display: flex;
+    justify-content: center;   /* horizontally center */
+    align-items: center;       /* vertically center */
+    gap: 20px;                 /* spacing between icons */
+    margin: 0px auto 0 auto;  /* ⬅ moves icons up */
+    text-align: center;
+    width: 100%;
+  }
+  
+  .form {
+    width: 300px;
+    margin: 0 auto;        /* center horizontally */
+    text-align: center;    /* center child content */
+  }
+  .liw{
+    width: 220px;
+    padding-top: 00px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+/* Reset browser defaults */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body setup */
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: #f8f9fa;
+    max-width: 100%;
+    overflow-x: hidden; /* prevent sideways scrolling */
+  }
+  
+  /* Container for content */
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  /* Images always fit screen */
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* Responsive navigation */
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    margin: 8px;
+    font-weight: bold;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive grid for cards (books, songs, etc.) */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  /* Card style */
+  .card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+  }
+  
+  .card:hover {
+    transform: scale(1.02);
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+  }
+  
+  /* ✅ Media queries for smaller screens */
+  @media (max-width: 768px) {
+    nav {
+      flex-direction: column;
+    }
+  
+    h1 {
+      font-size: 22px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 18px;
+    }
+  
+    .card {
+      padding: 10px;
+    }
+  }
+  
+
+  
+  
+    
+  
+
+        
