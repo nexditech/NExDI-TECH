@@ -39,19 +39,6 @@
             width: 300px;
             
         } 
-        @media screen and (max-width: 715px){
-            header {
-                height: 200px;
-            }
-            header .moble{
-                display: inline-block;
-            }
-            header .desktop{
-                display: none;
-            }
-
-
-        }
         .featurs{
             background-color: white;
             color: rgba(223, 190, 8, 0.87);
