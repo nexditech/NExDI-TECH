@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>NExDI Hub — Digital Marketing</title>
+  <style>
+    :root{
+      --bg:#f4f6f9;
+      --card:#ffffff;
+      --accent:#2563eb;
+      --accent-2:#0ea5e9;
+      --muted:#6b7280;
+      --text:#111827;
+      --radius:12px;
+      --gap:18px;
+      --maxw:1100px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:var(--bg);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+    }
+
+    header{
+      background:linear-gradient(90deg,var(--accent), #1e40af);
+      color:#fff;
+      padding:28px 20px;
+      text-align:center;
+    }
+    header h1{margin:0;font-size:24px}
+    header p{margin:6px 0 0;color:rgba(255,255,255,0.95)}
+
+    .wrap{max-width:var(--maxw);margin:28px auto;padding:0 18px}
+
+    .hero{
+      display:grid;
+      grid-template-columns:1fr 360px;
+      gap:var(--gap);
+      align-items:center;
+    }
+    @media (max-width:900px){ .hero{grid-template-columns:1fr} }
+
+    .lead{
+      background:var(--card);
+      padding:24px;
+      border-radius:var(--radius);
+      box-shadow:0 8px 26px rgba(16,24,40,0.06);
+    }
+    .lead h2{margin:0 0 10px;font-size:22px}
+    .lead p{margin:0;color:var(--muted)}
+
+    .cta {
+      background:linear-gradient(180deg,#fff,#fbfdff);
+      border-radius:var(--radius);
+      padding:18px;
+      text-align:center;
+      box-shadow:0 6px 18px rgba(16,24,40,0.04);
+    }
+    .cta h3{margin:0 0 8px}
+    .cta p{margin:0 0 12px;color:var(--muted);font-size:14px}
+    .btn{
+      display:inline-block;
+      background:var(--accent);
+      color:#fff;
+      padding:10px 14px;
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:600;
+    }
+
+    /* Services */
+    .section{margin-top:22px}
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:var(--gap);
+    }
+    @media (max-width:900px){ .grid{grid-template-columns:repeat(2,1fr)} }
+    @media (max-width:600px){ .grid{grid-template-columns:1fr} }
+
+    .service{
+      background:var(--card);
+      padding:18px;
+      border-radius:12px;
+      box-shadow:0 6px 18px rgba(16,24,40,0.04);
+    }
+    .service h4{margin:0 0 8px}
+    .service p{margin:0;color:var(--muted);font-size:14px}
+
+    /* Courses */
+    .courses{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:var(--gap);
+      margin-top:16px;
+    }
+    .course{
+      background:var(--card);
+      padding:16px;
+      border-radius:10px;
+      box-shadow:0 6px 18px rgba(16,24,40,0.04);
+    }
+    .course h5{margin:0 0 6px;color:var(--accent)}
+    .course p{margin:0;color:var(--muted);font-size:13px}
+
+    /* Case studies */
+    .case-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:16px;
+      margin-top:16px;
+    }
+    .case{
+      background:linear-gradient(180deg,#fff,#fbfdff);
+      border-radius:10px;
+      overflow:hidden;
+      box-shadow:0 8px 22px rgba(16,24,40,0.06);
+      display:flex;
+      flex-direction:column;
+    }
+    .case .meta{padding:14px}
+    .case h5{margin:0 0 8px}
+    .case p{margin:0;color:var(--muted);font-size:14px}
+
+    /* Resources & contact */
+    .two-col{
+      display:grid;
+      grid-template-columns:1fr 360px;
+      gap:var(--gap);
+      margin-top:22px;
+    }
+    @media (max-width:900px){ .two-col{grid-template-columns:1fr} }
+
+    .card{
+      background:var(--card);
+      padding:18px;
+      border-radius:12px;
+      box-shadow:0 6px 18px rgba(16,24,40,0.04);
+    }
+    .card h3{margin:0 0 8px}
+    .card p{margin:0;color:var(--muted)}
+
+    .list{margin-top:12px;padding-left:18px}
+    .list li{margin:8px 0;color:var(--muted);font-size:14px}
+
+    form label{display:block;margin:10px 0 6px;font-weight:600;font-size:14px}
+    input, select, textarea{width:100%;padding:10px;border:1px solid #e6eefc;border-radius:8px}
+    textarea{min-height:100px}
+
+    footer{max-width:var(--maxw);margin:28px auto;padding:18px;text-align:center;color:var(--muted);font-size:14px}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>NExDI Hub — Digital Marketing</h1>
+    <p>Grow products, users and impact with data-driven marketing, content and partnerships.</p>
+  </header>
+
+  <main class="wrap">
+    <!-- Hero -->
+    <div class="hero">
+      <div class="lead">
+        <h2>Digital marketing that moves people — and metrics</h2>
+        <p>From strategy to execution, NExDI’s digital marketing support helps startups and creators reach the right audience, drive conversions, and scale sustainably. Learn SEO, content, social media, growth marketing and analytics.</p>
+
+        <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
+          <span style="background:#eef2ff;padding:8px 10px;border-radius:999px;color:#1e40af;font-weight:600">SEO</span>
+          <span style="background:#ecfdf5;padding:8px 10px;border-radius:999px;color:#065f46;font-weight:600">Content</span>
+          <span style="background:#fff7ed;padding:8px 10px;border-radius:999px;color:#92400e;font-weight:600">Ads</span>
+          <span style="background:#f0f9ff;padding:8px 10px;border-radius:999px;color:#0369a1;font-weight:600">Analytics</span>
+        </div>
+      </div>
+
+      <aside class="cta">
+        <h3>Get a free growth review</h3>
+        <p>Book a 30-minute session with our growth lead to audit your funnel and get quick wins.</p>
+        <a class="btn" href="request-review.html">Request Review</a>
+      </aside>
+    </div>
+
+    <!-- Services -->
+    <section class="section">
+      <h3 style="margin:0 0 12px">Services</h3>
+      <div class="grid">
+        <div class="service">
+          <h4>Growth Strategy</h4>
+          <p>Funnel design, user acquisition plans, KPI & retention frameworks.</p>
+        </div>
+        <div class="service">
+          <h4>SEO & Content</h4>
+          <p>Keyword research, content calendars, on-page SEO and link building.</p>
+        </div>
+        <div class="service">
+          <h4>Paid Ads</h4>
+          <p>High-converting creatives, audience testing, and ad optimisation (Meta, Google).</p>
+        </div>
+        <div class="service">
+          <h4>Social & Community</h4>
+          <p>Community building, social strategy and creator partnerships.</p>
+        </div>
+        <div class="service">
+          <h4>Analytics & CRO</h4>
+          <p>Set up tracking, dashboards and run conversion rate experiments.</p>
+        </div>
+        <div class="service">
+          <h4>Partnerships</h4>
+          <p>Startup collaborations, B2B outreach and channel partnerships to scale reach.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Courses -->
+    <section class="section">
+      <h3 style="margin:0 0 12px">Courses & Workshops</h3>
+      <div class="courses">
+        <div class="course">
+          <h5>Intro to Digital Marketing</h5>
+          <p>Foundations: channels, buyer journey, and basic metrics.</p>
+        </div>
+        <div class="course">
+          <h5>SEO & Content Strategy</h5>
+          <p>Hands-on keyword research, content briefs and publishing workflow.</p>
+        </div>
+        <div class="course">
+          <h5>Paid Ads & Creative</h5>
+          <p>Build ad campaigns, A/B test creatives, and measure LTV/CAC.</p>
+        </div>
+        <div class="course">
+          <h5>Analytics & Growth</h5>
+          <p>Dashboards, cohort analysis and growth experiments.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Case studies -->
+    <section class="section">
+      <h3 style="margin:0 0 12px">Case Studies</h3>
+      <div class="case-grid">
+        <article class="case">
+          <div class="meta">
+            <h5>LocalPay — 3x Active Users in 6 months</h5>
+            <p>Launched targeted ad campaigns + content funnel that improved onboarding conversion by 40%.</p>
+          </div>
+        </article>
+
+        <article class="case">
+          <div class="meta">
+            <h5>EduConnect — Organic Growth</h5>
+            <p>SEO-led content strategy helped the platform reach top rankings for core keywords within 4 months.</p>
+          </div>
+        </article>
+
+        <article class="case">
+          <div class="meta">
+            <h5>HealthTrack — Community Launch</h5>
+            <p>Built creator partnerships and community events that generated 1,200 signups in launch week.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Resources and Contact -->
+    <div class="two-col">
+      <div class="card">
+        <h3>Tools & Resources</h3>
+        <p>Recommended tools to learn and use:</p>
+        <ul class="list">
+          <li>Google Analytics / GA4</li>
+          <li>Google Search Console</li>
+          <li>Ahrefs / Semrush (for keyword research)</li>
+          <li>Figma (for creatives)</li>
+          <li>Meta Ads Manager & Google Ads</li>
+        </ul>
+
+        <h3 style="margin-top:14px">Learning Links</h3>
+        <ul class="list">
+          <li><a href="https://analytics.google.com/" target="_blank">Google Analytics</a></li>
+          <li><a href="https://developers.google.com/search/docs" target="_blank">Google Search Docs</a></li>
+          <li><a href="https://www.coursera.org/" target="_blank">Coursera — Marketing Courses</a></li>
+        </ul>
+      </div>
+
+      <aside class="card">
+        <h3>Contact Growth Team</h3>
+        <p>Interested in training, partnership or a growth review? Send us a quick note and we’ll get back within 48 hours.</p>
+        <form action="mailto:careers@nexdihub.com" method="post" enctype="text/plain">
+          <label for="name">Full name</label>
+          <input id="name" name="name" type="text" required placeholder="Your name">
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required placeholder="you@domain.com">
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Tell us about your needs..." required></textarea>
+
+          <button type="submit" class="btn" style="width:100%;margin-top:10px">Send Request</button>
+        </form>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 NExDI Hub — Digital Marketing • Helping products grow with data & creativity
+  </footer>
+</body>
+</html>

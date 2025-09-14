@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NExDI Hub — Cybersecurity Internship Application</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f3f4f6;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #0f766e;
+      color: white;
+      text-align: center;
+      padding: 25px;
+    }
+    header h1 { margin: 0; }
+    main {
+      max-width: 700px;
+      margin: 30px auto;
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    }
+    form label {
+      display: block;
+      margin: 14px 0 6px;
+      font-weight: bold;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+    form textarea { min-height: 100px; resize: vertical; }
+    .btn {
+      margin-top: 20px;
+      background: #0f766e;
+      color: #fff;
+      padding: 14px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .btn:hover { background: #115e59; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🔒 Apply — Cybersecurity Internship</h1>
+    <p>Join NExDI Hub to learn ethical hacking, digital defense & cyber resilience</p>
+  </header>
+
+  <main>
+    <form action="submit_cybersecurity.php" method="POST" enctype="multipart/form-data">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="cv">Upload CV (PDF/DOC)</label>
+      <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required>
+
+      <label for="motivation">Why Cybersecurity?</label>
+      <textarea id="motivation" name="motivation" placeholder="Tell us why you're passionate about cybersecurity..." required></textarea>
+
+      <button type="submit" class="btn">Submit Application</button>
+    </form>
+  </main>
+</body>
+</html>

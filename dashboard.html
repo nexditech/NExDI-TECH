@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NExDI Tech Hub - Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+      display: flex;
+    }
+    /* Sidebar */
+    .sidebar {
+      width: 220px;
+      background: #111827;
+      color: white;
+      height: 100vh;
+      position: fixed;
+      left: 0;
+      top: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .sidebar h2 {
+      text-align: center;
+      padding: 20px 0;
+      margin: 0;
+      background: #1f2937;
+    }
+    .sidebar a {
+      display: block;
+      padding: 12px 20px;
+      color: #ccc;
+      text-decoration: none;
+    }
+    .sidebar a:hover {
+      background: #374151;
+      color: white;
+    }
+    .logout {
+      padding: 15px;
+      text-align: center;
+      background: #1f2937;
+    }
+    .logout a {
+      color: #f87171;
+      text-decoration: none;
+    }
+    /* Main content */
+    .main {
+      margin-left: 220px;
+      padding: 20px;
+      width: 100%;
+    }
+    header {
+      background: white;
+      padding: 15px 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 22px;
+      color: #111827;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .card h3 {
+      margin-top: 0;
+      color: #111827;
+    }
+    .card p {
+      color: #4b5563;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 15px;
+      background: #2563eb;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      margin-top: 10px;
+    }
+    .btn:hover {
+      background: #1d4ed8;
+    }
+  </style>
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div>
+      <h2>NExDI Hub</h2>
+      <a href="ov.html">📊 Overview</a>
+      <a href="pj.html">💡 Projects</a>
+      <a href="cmm.html">👥 Community</a>
+      <a href="lr.html">📚 Learning</a>
+      <a href="sp.html">🛠 Support</a>
+    </div>
+    <div class="logout">
+      <a href="contact us.html">🚪 Logout</a>
+    </div>
+  </div>
+
+  <!-- Main -->
+  <div class="main">
+    <header>
+      <h1>Welcome, Innovator 👋</h1>
+    </header>
+
+    <div class="grid">
+      <div class="card" id="overview">
+        <h3>Overview</h3>
+        <p>Track your activities, projects, and learning progress inside NExDI Tech Hub.</p>
+      </div>
+
+      <div class="card" id="projects">
+        <h3>My Projects</h3>
+        <p>• AI Research Tool<br>• Website Builder<br>• Mobile Payment App</p>
+        <a href="pj.html" class="btn">View Projects</a>
+      </div>
+
+      <div class="card" id="community">
+        <h3>Community</h3>
+        <p>Connect with innovators and collaborate on tech solutions.</p>
+        <a href="cmm.html" class="btn">Join Now</a>
+      </div>
+
+      <div class="card" id="learning">
+        <h3>Learning</h3>
+        <p>Continue your growth with courses:</p>
+        <ul>
+          <li>Web Development</li>
+          <li>Cybersecurity Basics</li>
+          <li>Cloud Computing</li>
+        </ul>
+        <a href="lr.html" class="btn">Start Learning</a>
+      </div>
+
+      <div class="card" id="support">
+        <h3>Support</h3>
+        <p>Email: support@nexditech.org<br>WhatsApp: +234-XXXXXXXXXX</p>
+        <a href="sp.html" class="btn">Get Help</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

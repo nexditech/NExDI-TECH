@@ -21,19 +21,24 @@
             </ul>
         </nav>
     </header>
-    <section>        <h1>CONTACT</h1>
     </section>
 
     <section>
 
         <div class="form">
             <h2>Login Here</h2>
-            <input type="email" name="email" placeholder="Enter Email Here">
-            <input type="password" name="password" placeholder="Enter Password">
-            <button class="btnn">Login</button>
-
+            <form action="dashboard.html" method="post">
+                <label for="email">email address</label>
+                <input type="text" id="email" name="email" placeholder="Enter email address" required>
+          
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter Password" required>
+          
+                <button type="submit" class="btn">Login</button>
+                <p class="note">Forgot Password? <a href="forgot-password.html">Click here</a></p>
+              </form>
             <p class="link">Don't have an account?<br>
-                <a href="#">Sign up</a> Here
+                <a href="sign-uo.html">Sign up</a> Here
             </p>
 
             <p class="liw">Login with</p>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NExDI Hub - Projects</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f6f9;
+      color: #111827;
+    }
+    .projects {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .projects h1 {
+      font-size: 32px;
+      margin-bottom: 15px;
+      color: #2563eb;
+    }
+    .projects p {
+      font-size: 16px;
+      max-width: 700px;
+      margin: 0 auto 40px;
+      color: #4b5563;
+    }
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .project-card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-align: left;
+      transition: transform 0.2s;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+    .project-card h3 {
+      margin-top: 0;
+      color: #1e40af;
+    }
+    .project-card p {
+      font-size: 14px;
+      color: #374151;
+      margin-bottom: 15px;
+    }
+    .project-card a {
+      display: inline-block;
+      padding: 8px 14px;
+      background: #2563eb;
+      color: white;
+      border-radius: 6px;
+      font-size: 14px;
+      text-decoration: none;
+    }
+    .project-card a:hover {
+      background: #1d4ed8;
+    }
+  </style>
+</head>
+<body>
+  <section class="projects">
+    <h1>Our Projects</h1>
+    <p>At NExDI Tech Hub, we work on impactful tech solutions. Here are some of the innovative projects our team and community members are building:</p>
+    
+    <div class="project-grid">
+      <div class="project-card">
+        <h3>🌍 Smart City Dashboard</h3>
+        <p>An IoT-powered solution that helps cities monitor traffic, waste, and energy usage in real-time.</p>
+        <a href="#">View Project</a>
+      </div>
+      <div class="project-card">
+        <h3>📱 EduConnect App</h3>
+        <p>A mobile app that connects students with mentors and provides access to online learning resources.</p>
+        <a href="#">View Project</a>
+      </div>
+      <div class="project-card">
+        <h3>🤖 AI Health Assistant</h3>
+        <p>A chatbot powered by AI that gives users quick health advice and connects them with doctors.</p>
+        <a href="#">View Project</a>
+      </div>
+      <div class="project-card">
+        <h3>💳 LocalPay System</h3>
+        <p>A secure payment platform built for local businesses to accept digital payments easily.</p>
+        <a href="#">View Project</a>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

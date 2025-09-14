@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NExDI Hub — Apply for Internship</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f3f4f6;
+      color: #111827;
+    }
+    header {
+      background: #0f766e;
+      color: #fff;
+      text-align: center;
+      padding: 25px;
+    }
+    header h1 { margin: 0; font-size: 26px; }
+    header p { margin: 6px 0 0; }
+
+    main {
+      max-width: 700px;
+      margin: 30px auto;
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    main h2 { margin-top: 0; color: #0f766e; }
+
+    form label {
+      display: block;
+      margin: 12px 0 6px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+    form input, form select, form textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+    form textarea { min-height: 100px; }
+
+    .btn {
+      margin-top: 18px;
+      background: #0f766e;
+      color: #fff;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn:hover { background: #115e59; }
+
+    footer {
+      text-align: center;
+      font-size: 14px;
+      color: #6b7280;
+      margin: 40px 0 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🚀 Apply for Internship</h1>
+    <p>Join NExDI Hub and gain real-world tech experience</p>
+  </header>
+
+  <main>
+    <h2>Internship Application Form</h2>
+    <form action="mailto:careers@nexdihub.com" method="post" enctype="text/plain">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="Your full name" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+      <label for="track">Preferred Internship Track</label>
+      <select id="track" name="track" required>
+        <option value="">-- Select Track --</option>
+        <option>Frontend Development</option>
+        <option>Backend Development</option>
+        <option>Mobile App Development</option>
+        <option>Data Analysis</option>
+        <option>Cybersecurity</option>
+        <option>Cloud Computing</option>
+        <option>AI & Machine Learning</option>
+        <option>UI/UX Design</option>
+        <option>Digital Marketing</option>
+        <option>Tech Support</option>
+        <option>Entrepreneurship</option>
+      </select>
+
+      <label for="cv">Upload CV/Resume (PDF/DOC)</label>
+      <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required>
+
+      <label for="message">Why do you want this internship?</label>
+      <textarea id="message" name="message" placeholder="Write your motivation here..." required></textarea>
+
+      <button type="submit" class="btn">Submit Application</button>
+    </form>
+  </main>
+
+  <footer>
+    © 2025 NExDI Hub — Empowering the next generation of tech innovators
+  </footer>
+</body>
+</html>

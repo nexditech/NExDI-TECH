@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>NExDI Hub — Request a Review</title>
+  <style>
+    :root{
+      --bg:#f4f6f9;
+      --card:#ffffff;
+      --accent:#2563eb;
+      --muted:#6b7280;
+      --text:#111827;
+      --radius:12px;
+      --container:960px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;
+      background:var(--bg);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+    }
+
+    header{
+      background:linear-gradient(90deg,var(--accent),#1e40af);
+      color:#fff;
+      padding:28px 18px;
+      text-align:center;
+    }
+    header h1{margin:0;font-size:22px}
+    header p{margin:8px 0 0;color:rgba(255,255,255,0.9)}
+
+    main{max-width:var(--container);margin:28px auto;padding:0 18px}
+
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      box-shadow:0 8px 26px rgba(16,24,40,0.06);
+      overflow:hidden;
+    }
+
+    .split{display:grid;grid-template-columns:1fr 360px;gap:18px}
+    @media (max-width:980px){ .split{grid-template-columns:1fr} }
+
+    .left{padding:22px}
+    .right{background:linear-gradient(180deg,#fff,#fbfdff);padding:22px}
+
+    h2{margin:0 0 10px;font-size:20px}
+    p.lead{margin:0 0 16px;color:var(--muted)}
+
+    form label{display:block;margin:12px 0 6px;font-weight:600;font-size:14px}
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select,
+    textarea {
+      width:100%;
+      padding:10px 12px;
+      border:1px solid #e6eefc;
+      border-radius:8px;
+      font-size:14px;
+      background:#fff;
+      color:var(--text);
+    }
+    textarea{min-height:110px;resize:vertical}
+
+    .row{display:flex;gap:12px}
+    .row .col{flex:1}
+
+    .small{font-size:13px;color:var(--muted);margin-top:6px}
+
+    .btn{
+      display:inline-block;
+      background:var(--accent);
+      color:#fff;
+      padding:10px 14px;
+      border-radius:10px;
+      text-decoration:none;
+      font-weight:600;
+      border:none;
+      cursor:pointer;
+      margin-top:12px;
+    }
+    .btn.secondary{
+      background:#111827;
+      margin-left:8px;
+    }
+
+    .help-list{list-style:none;padding:0;margin:12px 0 0;color:var(--muted)}
+    .help-list li{margin:8px 0;font-size:14px}
+
+    .meta{font-size:13px;color:var(--muted);margin-top:10px}
+
+    footer{text-align:center;padding:24px;color:var(--muted);font-size:14px}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Request a Review</h1>
+    <p>Get expert feedback from NExDI — design critiques, growth audits, project reviews and more.</p>
+  </header>
+
+  <main>
+    <div class="card split" role="main">
+      <!-- Left: Form -->
+      <div class="left">
+        <h2>Request Form</h2>
+        <p class="lead">Tell us about your project and what kind of review you need. We'll get back to schedule a session.</p>
+
+        <!-- NOTE: change form action to your backend endpoint (e.g. /submit-review.php) -->
+        <form action="mailto:reviews@nexdihub.com" method="post" enctype="text/plain">
+          <label for="name">Full name</label>
+          <input id="name" name="name" type="text" placeholder="Jane Doe" required>
+
+          <label for="email">Email address</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required>
+
+          <label for="phone">Phone (optional)</label>
+          <input id="phone" name="phone" type="tel" placeholder="+234 801 234 5678">
+
+          <div class="row">
+            <div class="col">
+              <label for="type">Review type</label>
+              <select id="type" name="type" required>
+                <option value="">— Select —</option>
+                <option>Design / UI-UX Review</option>
+                <option>Product / Feature Review</option>
+                <option>Growth / Marketing Audit</option>
+                <option>Technical Architecture Review</option>
+                <option>Portfolio / CV Review</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="col">
+              <label for="preferred">Preferred format</label>
+              <select id="preferred" name="preferred" required>
+                <option value="">— Select —</option>
+                <option>30-min video call</option>
+                <option>60-min video call</option>
+                <option>Written feedback</option>
+                <option>In-person</option>
+              </select>
+            </div>
+          </div>
+
+          <label for="project">Project / URL</label>
+          <input id="project" name="project" type="text" placeholder="https://your-project.com or GitHub repo">
+
+          <label for="files">Attach files (screenshots, brief, deck) — optional</label>
+          <input id="files" name="files" type="file" accept=".png,.jpg,.jpeg,.pdf,.zip,.pptx">
+
+          <label for="message">Brief description & goals</label>
+          <textarea id="message" name="message" placeholder="What specifically would you like feedback on? (e.g. onboarding flow, landing page conversion, API design)"></textarea>
+
+          <div class="row" style="margin-top:10px;align-items:center">
+            <div class="col">
+              <label for="when">Preferred date/time (optional)</label>
+              <input id="when" name="when" type="text" placeholder="e.g. Mon 14 Apr, 10:00 AM (WAT)">
+              <div class="small">We operate in West Africa Time (WAT / UTC+1). We'll confirm exact slot.</div>
+            </div>
+            <div style="min-width:140px">
+              <label for="budget">Budget (optional)</label>
+              <select id="budget" name="budget">
+                <option value="">— Select —</option>
+                <option>No budget (free review)</option>
+                <option>$25 — Quick review</option>
+                <option>$75 — In-depth review</option>
+                <option>Custom / Paid engagement</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="margin-top:14px">
+            <button type="submit" class="btn">Send Request</button>
+            <button type="reset" class="btn secondary">Clear</button>
+          </div>
+
+          <p class="meta">By submitting you agree we may contact you about this request. We respect your privacy.</p>
+        </form>
+      </div>
+
+      <!-- Right: Info / guidance -->
+      <aside class="right" aria-labelledby="help-title">
+        <h2 id="help-title">How it works</h2>
+        <p class="lead">Choose the review type, attach relevant files, and propose preferred times. We'll respond within 48 hours to confirm the session.</p>
+
+        <h3 style="margin-top:12px">Preparation tips</h3>
+        <ul class="help-list">
+          <li><strong>For design reviews:</strong> include mockups, user flows, and the key problem.</li>
+          <li><strong>For growth audits:</strong> share analytics access or top-of-funnel metrics.</li>
+          <li><strong>For technical reviews:</strong> link to architecture diagrams or repo.</li>
+          <li><strong>For portfolio reviews:</strong> add portfolio URL and one problem you want help with.</li>
+        </ul>
+
+        <h3 style="margin-top:14px">Pricing & timeline</h3>
+        <p class="small">We offer free community reviews and paid, deeper engagements. Paid reviews include a written report and next-step recommendations.</p>
+
+        <h3 style="margin-top:14px">Need fast help?</h3>
+        <p class="small">Email <a href="mailto:reviews@nexdihub.com">reviews@nexdihub.com</a> or use WhatsApp: <span style="font-weight:600">+234 7010646417</span></p>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 NExDI Hub — Helping projects grow with useful feedback
+  </footer>
+</body>
+</html>
