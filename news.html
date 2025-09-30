@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NExDI News & Updates</title>
+  <style>
+    body {margin:0; font-family:Arial, sans-serif; background:#fff; color:#000; line-height:1.6;}
+    header.news-hero {text-align:center; padding:60px 20px; background:#000; color:#FFD700;}
+    header.news-hero h1 {margin:0; font-size:2.5rem;}
+    header.news-hero p {font-size:1.1rem; margin-top:10px;}
+
+    /* Featured */
+    .featured-news {display:flex; flex-wrap:wrap; gap:20px; padding:40px 20px; align-items:center; max-width:1000px; margin:auto;}
+    .featured-news img {width:100%; max-width:500px; border-radius:12px; border:2px solid #FFD700;}
+    .featured-news div {flex:1; min-width:280px;}
+    .featured-news h2 {color:#000; margin-top:0;}
+    .featured-news p {color:#333;}
+    
+    /* Grid */
+    .news-grid {display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:20px; padding:20px; max-width:1000px; margin:auto;}
+    .news-card {background:#111; color:#FFD700; padding:20px; border-radius:12px; border:2px solid #FFD700;}
+    .news-card img {width:100%; height:180px; object-fit:cover; border-radius:8px; margin-bottom:10px;}
+    .news-card h3 {margin:0 0 10px;}
+    .news-card p {margin:0 0 10px; color:#eee;}
+    .more {display:none; margin-top:10px;}
+    
+    /* Buttons */
+    .btn {display:inline-block; margin-top:10px; padding:10px 18px; background:#FFD700; color:#000; border:none; border-radius:6px; font-weight:bold; cursor:pointer;}
+    .btn:hover {background:#e6c200;}
+
+    /* Extra Sections */
+    section.extra {padding:50px 20px; background:#f9f9f9;}
+    section.extra h2 {text-align:center; color:#000; margin-bottom:30px;}
+    .cards {display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:20px;}
+    .cards .card {background:#fff; border:2px solid #FFD700; border-radius:12px; padding:20px; text-align:center;}
+    .cards .card h3 {margin:0 0 10px; color:#000;}
+    .cards .card p {color:#333;}
+
+    /* Apply button inside events */
+    .apply-btn {
+      background:#FFD700;
+      color:#000;
+      display:block;
+      margin:15px auto 0 auto;
+      padding:10px 20px;
+      border:none;
+      border-radius:6px;
+      font-weight:bold;
+      cursor:pointer;
+    }
+    .apply-btn:hover {
+      background:#e6c200;
+    }
+
+    /* Newsletter */
+    .newsletter {background:#000; color:#FFD700; padding:40px 20px; text-align:center;}
+    .newsletter input[type=email] {padding:10px; width:250px; border-radius:6px; border:1px solid #FFD700;}
+    .newsletter button {padding:10px 18px; border:none; border-radius:6px; background:#FFD700; color:#000; font-weight:bold; cursor:pointer;}
+    .newsletter button:hover {background:#e6c200;}
+
+    /* Footer */
+    footer {background:#000; color:#FFD700; text-align:center; padding:20px; margin-top:30px;}
+
+    /* Modal */
+    .modal {display:none; position:fixed; z-index:2000; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.8);}
+    .modal-content {background:#fff; color:#000; margin:5% auto; padding:20px; border-radius:12px; width:90%; max-width:500px; position:relative;}
+    .modal-content h2 {margin-top:0; color:#000;}
+    .modal-content label {display:block; margin-top:10px; font-weight:bold;}
+    .modal-content input, .modal-content textarea {width:100%; padding:10px; margin-top:5px; border:1px solid #FFD700; border-radius:6px;}
+    .modal-content button {margin-top:15px;}
+    .close {position:absolute; top:10px; right:20px; font-size:28px; cursor:pointer; color:#000;}
+  </style>
+</head>
+<body>
+  <header class="news-hero">
+    <h1>News & Updates</h1>
+    <p>Stay up to date with the latest from NExDI</p>
+  </header>
+
+  <main>
+    <!-- Featured News -->
+    <section class="featured-news">
+      <img src="bill-jelen-xb58P14hThc-unsplash.jpg" alt="Featured news image">
+      <div>
+        <h2>Big Announcement from NExDI</h2>
+        <p>We are excited to announce the launch of our brand-new Digital Innovation Hub in Nigeria!</p>
+        <div class="more">
+          <p>This hub is designed to create a collaborative space where youths, entrepreneurs, and innovators can learn, build, and scale their ideas. It features a co-working space, training facilities, and mentorship programs.</p>
+          <p>Through this hub, NExDI will provide resources in AI, Cloud, Cybersecurity, and Data Analytics. Our goal is to make Nigeria a central hub for digital innovation in Africa.</p>
+        </div>
+        <button class="btn" onclick="toggleMore(this)">Read More</button>
+      </div>
+    </section>
+
+    <!-- News Grid -->
+    <section class="news-grid">
+      <article class="news-card">
+        <img src="joshua-koblin-2lAqljC9Tqw-unsplash.jpg" alt="Cybersecurity Bootcamp">
+        <h3>Cybersecurity Training Bootcamp</h3>
+        <p>NExDI is empowering students with hands-on cybersecurity skills through a specialized bootcamp...</p>
+        <div class="more">
+          <p>The bootcamp covered ethical hacking, penetration testing, and incident response. Students worked on simulated labs to practice real-world defense strategies.</p>
+          <p>Many participants have already secured internships and freelance jobs after the program.</p>
+        </div>
+        <button class="btn" onclick="toggleMore(this)">Read More</button>
+      </article>
+
+      <article class="news-card">
+        <img src="cytonn-photography-n95VMLxqM2I-unsplash.jpg" alt="Tech Partnership">
+        <h3>Partnership with Tech Giants</h3>
+        <p>NExDI is proud to announce partnerships with top technology companies including Microsoft, Google, and AWS.</p>
+        <div class="more">
+          <p>These partnerships open doors for students to access free resources, cloud credits, certifications, and mentorship from global experts.</p>
+          <p>Our learners can now take certification exams, access professional-grade tools, and join exclusive competitions.</p>
+        </div>
+        <button class="btn" onclick="toggleMore(this)">Read More</button>
+      </article>
+
+      <article class="news-card">
+        <img src="robot.jpg" alt="AI Summit">
+        <h3>AI & Innovation Summit</h3>
+        <p>NExDI recently hosted the AI & Innovation Summit 2025, bringing together over 500 participants including students, startups, and industry leaders.</p>
+        <div class="more">
+          <p>The summit featured keynote sessions on AI in healthcare, agriculture, and fintech, plus workshops where participants built real-world AI solutions in 24 hours.</p>
+          <p>The event ended with a pitch competition, where the winning team secured funding and mentorship for their AI startup.</p>
+        </div>
+        <button class="btn" onclick="toggleMore(this)">Read More</button>
+      </article>
+    </section>
+
+    <!-- Upcoming Events -->
+    <section class="extra">
+      <h2>Upcoming Events</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Hackathon 2025</h3>
+          <p>Join our nationwide hackathon to showcase your innovation skills. Winners will receive funding and mentorship opportunities.</p>
+          <button class="apply-btn" onclick="openForm('Hackathon 2025')">Apply</button>
+        </div>
+        <div class="card">
+          <h3>Web Dev Bootcamp</h3>
+          <p>A 4-week hands-on program for aspiring developers, covering HTML, CSS, JavaScript, and React.</p>
+          <button class="apply-btn" onclick="openForm('Web Dev Bootcamp')">Apply</button>
+        </div>
+        <div class="card">
+          <h3>AI Workshop</h3>
+          <p>A one-day intensive workshop on practical AI applications in agriculture and healthcare.</p>
+          <button class="apply-btn" onclick="openForm('AI Workshop')">Apply</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="newsletter">
+      <h2>Subscribe to Our Newsletter</h2>
+      <p>Get the latest news, events, and updates straight to your inbox.</p>
+      <form>
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 NExDI. All rights reserved.</p>
+  </footer>
+
+  <!-- Application Form Modal -->
+  <div id="applyModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeForm()">&times;</span>
+      <h2 id="eventTitle">Apply for Event</h2>
+      <form>
+        <label>Full Name</label>
+        <input type="text" name="name" required>
+
+        <label>Email</label>
+        <input type="email" name="email" required>
+
+        <label>Phone Number</label>
+        <input type="tel" name="phone" required>
+
+        <label>Why do you want to join?</label>
+        <textarea name="reason" required></textarea>
+
+        <button type="submit" class="btn">Submit Application</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Read More toggle
+    function toggleMore(button) {
+      const moreText = button.previousElementSibling;
+      if (moreText.style.display === "none" || moreText.style.display === "") {
+        moreText.style.display = "block";
+        button.textContent = "Read Less";
+      } else {
+        moreText.style.display = "none";
+        button.textContent = "Read More";
+      }
+    }
+
+    // Modal form
+    function openForm(eventName) {
+      document.getElementById("applyModal").style.display = "block";
+      document.getElementById("eventTitle").textContent = "Apply for " + eventName;
+    }
+    function closeForm() {
+      document.getElementById("applyModal").style.display = "none";
+    }
+    window.onclick = function(event) {
+      const modal = document.getElementById("applyModal");
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>

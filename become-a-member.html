@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Become a Member — NExDI Hub</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9fafb;
+      margin: 0;
+      padding: 20px;
+      color: #111827;
+    }
+    h1 {
+      text-align: center;
+      color: #2563eb;
+    }
+    p {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    form {
+      max-width: 500px;
+      margin: 20px auto;
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin: 10px 0 5px;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+    }
+    button {
+      background: #2563eb;
+      color: white;
+      border: none;
+      padding: 12px;
+      width: 100%;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    button:hover {
+      background: #1d4ed8;
+    }
+  </style>
+</head>
+<body>
+  <h1>🚀 Become a Member</h1>
+  <p>Join NExDI Tech Hub and unlock access to mentorship, learning resources, internships, and community support.</p>
+
+  <form action="submit_membership.php" method="post">
+    <label for="fullname">Full Name</label>
+    <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+    <label for="phone">Phone Number</label>
+    <input type="text" id="phone" name="phone" placeholder="+234 800 000 0000" required>
+
+    <label for="field">Area of Interest</label>
+    <select id="field" name="field" required>
+      <option value="">-- Select Your Interest --</option>
+      <option value="frontend">Front-End Development</option>
+      <option value="backend">Back-End Development</option>
+      <option value="mobile">Mobile App Development</option>
+      <option value="data">Data Analysis</option>
+      <option value="cyber">Cybersecurity</option>
+      <option value="cloud">Cloud Computing</option>
+      <option value="ai">AI & Machine Learning</option>
+      <option value="uiux">UI/UX Design</option>
+      <option value="marketing">Digital Marketing</option>
+      <option value="support">Tech Support</option>
+    </select>
+
+    <label for="membership">Membership Type</label>
+    <select id="membership" name="membership" required>
+      <option value="">-- Choose Type --</option>
+      <option value="student">Student (Free)</option>
+      <option value="intern">Internship</option>
+      <option value="pro">Professional</option>
+      <option value="mentor">Mentor</option>
+    </select>
+
+    <button type="submit">Join Now</button>
+  </form>
+</body>
+</html>
