@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NExDI Tech – Top Stories</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f9;
+      color: #333;
+    }
+    header {
+      background: #0d47a1;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    nav {
+      background: #1565c0;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      background: white;
+      padding: 20px;
+      margin: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    section h2 {
+      color: #f39c12;
+    }
+    .article {
+      display: flex;
+      gap: 15px;
+      background: #fff8e1;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-left: 5px solid #f39c12;
+      border-radius: 6px;
+      align-items: flex-start;
+    }
+    .article img {
+      width: 150px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+    .article-content {
+      flex: 1;
+    }
+    .article h3 {
+      margin-top: 0;
+    }
+    .read-more {
+      display: inline-block;
+      margin-top: 10px;
+      color: #1565c0;
+      cursor: pointer;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    footer {
+      background: #0d47a1;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>NExDI Tech News</h1>
+    <p>Top Stories – The Biggest Tech Highlights</p>
+  </header>
+  <nav>
+    <a href="news.html">Home</a>
+    <a href="topstories.html">Top Stories</a>
+    <a href="technology.html">Technology</a>
+    <a href="ai.html">AI</a>
+    <a href="cybersecurity.html">Cybersecurity</a>
+    <a href="mobile.html">Mobile</a>
+  </nav>
+  <section id="top-stories">
+    <h2>Top Stories</h2>
+
+    <div class="article">
+      <img src="https://via.placeholder.com/150x100?text=NExDI+Africa" alt="NExDI Africa Expansion">
+      <div class="article-content">
+        <h3>NExDI Tech Expands Across Africa</h3>
+        <p>The company is bringing AI, Cybersecurity, and Cloud to more regions...</p>
+        <div class="full-content" style="display:none;">
+          <p>NExDI Tech has announced expansion into 10 new African countries, supporting startups, schools, and enterprises with cutting-edge solutions.</p>
+        </div>
+        <a class="read-more" onclick="toggleContent(this)">Read More</a>
+      </div>
+    </div>
+
+    <div class="article">
+      <img src="https://via.placeholder.com/150x100?text=AI+Future" alt="Future of AI">
+      <div class="article-content">
+        <h3>Future of Work: AI + Humans</h3>
+        <p>Experts predict a hybrid future of AI and human collaboration...</p>
+        <div class="full-content" style="display:none;">
+          <p>Reports show that by 2030, 60% of jobs will require some AI knowledge, making education and reskilling critical for global workforce development.</p>
+        </div>
+        <a class="read-more" onclick="toggleContent(this)">Read More</a>
+      </div>
+    </div>
+
+    <div class="article">
+      <img src="https://via.placeholder.com/150x100?text=Cyber+Attack" alt="Cybersecurity Breach">
+      <div class="article-content">
+        <h3>Cybersecurity Breach Affects Millions</h3>
+        <p>Another wave of attacks reported in Europe...</p>
+        <div class="full-content" style="display:none;">
+          <p>A major European telecom was hit by ransomware, prompting urgent calls for stronger security frameworks worldwide.</p>
+        </div>
+        <a class="read-more" onclick="toggleContent(this)">Read More</a>
+      </div>
+    </div>
+
+    <div class="article">
+      <img src="https://via.placeholder.com/150x100?text=Quantum+Chip" alt="Quantum Computing">
+      <div class="article-content">
+        <h3>Quantum Computing Breakthrough</h3>
+        <p>New chip design accelerates calculations...</p>
+        <div class="full-content" style="display:none;">
+          <p>Researchers announced a new quantum chip architecture that can solve problems previously impossible on classical supercomputers.</p>
+        </div>
+        <a class="read-more" onclick="toggleContent(this)">Read More</a>
+      </div>
+    </div>
+
+    <div class="article">
+      <img src="https://via.placeholder.com/150x100?text=Smart+Homes" alt="Explorer Homes Smart">
+      <div class="article-content">
+        <h3>Explorer Reality Homes Goes Smart</h3>
+        <p>Smart home technologies integrated with NExDI solutions...</p>
+        <div class="full-content" style="display:none;">
+          <p>Explorer Reality Homes now supports IoT-based smart solutions for security, energy efficiency, and AI-powered comfort management.</p>
+        </div>
+        <a class="read-more" onclick="toggleContent(this)">Read More</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 NExDI Tech – All Rights Reserved</p>
+  </footer>
+
+  <script>
+    function toggleContent(button) {
+      const fullContent = button.previousElementSibling;
+      if (fullContent.style.display === "none" || fullContent.style.display === "") {
+        fullContent.style.display = "block";
+        button.textContent = "Show Less";
+      } else {
+        fullContent.style.display = "none";
+        button.textContent = "Read More";
+      }
+    }
+  </script>
+</body>
+</html>

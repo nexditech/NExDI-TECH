@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NExDI Tech – Mobile & Gadgets</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f9;
+      color: #333;
+    }
+    header {
+      background: #0d47a1;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    nav {
+      background: #1565c0;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      background: white;
+      padding: 20px;
+      margin: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    section h2 {
+      color: #2e7d32;
+    }
+    .article {
+      display: flex;
+      gap: 15px;
+      background: #e8f5e9;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-left: 5px solid #2e7d32;
+      border-radius: 6px;
+      align-items: flex-start;
+    }
+    .article img {
+      width: 150px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+    .article-content {
+      flex: 1;
+    }
+    .article h3 {
+      margin-top: 0;
+    }
+    .read-more {
+      display: inline-block;
+      margin-top: 10px;
+      color: #1565c0;
+      cursor: pointer;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    footer {
+      background: #0d47a1;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>NExDI Tech News</h1>
+    <p>Mobile & Gadgets – Latest Trends & Reviews</p>
+  </header>
+  <nav>
+    <a href="news.html">Home</a>
+    <a href="topstories.html">Top Stories</a>
+    <a href="technology.html">Technology</a>
+    <a href="ai.html">AI</a>
+    <a href="cybersecurity.html">Cybersecurity</a>
+    <a href="mobile.html">Mobile</a>
+  </nav>
+
+  <section id="mobile">
+    <h2>Mobile & Gadgets</h2>
+
+    <div class="article">
+      <img src="https://via.placeholder.com/150x100?text=Smartphones+2025" alt="Smartphones 2025">
+      <div class="article-content">
+        <h3>Top 5 Smartphones of 2025</h3>
+        <p>A quick look at the latest mobile devices...</p>
+        <div class="full-content" style="display:none;">
+          <p>From foldables to AI-integrated devices, the 2025 smartphone lineup offers powerful performance, futuristic designs, and unmatched user experiences.</p>
+        </div>
+        <a class="read-more" onclick="toggleContent(this)">Read More</a>
+      </div>
+    </div>
+
+    <div class="article">
+      <img src="https://via.placeholder.com/150x100?text=NExDI+Mobile+App" alt="Mobile App">
+      <div class="article-content">
+        <h3>NExDI Mobile Payment App</h3>
+        <p>A secure way to make local transactions...</p>
+        <div class="full-content" style="display:none;">
+          <p>The new app enables instant payments, bill splitting, and offline transaction support, boosting financial inclusion in local communities.</p>
+        </div>
+        <a class="read-more" onclick="toggleContent(this)">Read More</a>
+      </div>
+    </div>
+
+    <div class="article">
+      <img src="https://via.placeholder.com/150x100?text=Foldable+Phones" alt="Foldable Phone">
+      <div class="article-content">
+        <h3>Foldable Phones Take Over</h3>
+        <p>Next-gen foldables become mainstream...</p>
+        <div class="full-content" style="display:none;">
+          <p>With improved durability and lower prices, foldable phones are no longer niche products—they’re the future of mobile innovation.</p>
+        </div>
+        <a class="read-more" onclick="toggleContent(this)">Read More</a>
+      </div>
+    </div>
+
+    <div class="article">
+      <img src="https://via.placeholder.com/150x100?text=Wearables" alt="Wearables">
+      <div class="article-content">
+        <h3>Wearables Beyond Fitness</h3>
+        <p>Smartwatches now monitor health and productivity...</p>
+        <div class="full-content" style="display:none;">
+          <p>Wearables track not just fitness but also blood sugar, stress levels, and even mental health, becoming indispensable daily gadgets.</p>
+        </div>
+        <a class="read-more" onclick="toggleContent(this)">Read More</a>
+      </div>
+    </div>
+
+    <div class="article">
+      <img src="https://via.placeholder.com/150x100?text=5G+Phones" alt="5G Phones">
+      <div class="article-content">
+        <h3>5G Smartphones Reshape Connectivity</h3>
+        <p>Ultra-fast speeds bring new mobile possibilities...</p>
+        <div class="full-content" style="display:none;">
+          <p>With 5G, mobile gaming, VR experiences, and instant streaming are seamless, revolutionizing how users interact with their devices.</p>
+        </div>
+        <a class="read-more" onclick="toggleContent(this)">Read More</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 NExDI Tech – All Rights Reserved</p>
+  </footer>
+
+  <script>
+    function toggleContent(button) {
+      const fullContent = button.previousElementSibling;
+      if (fullContent.style.display === "none" || fullContent.style.display === "") {
+        fullContent.style.display = "block";
+        button.textContent = "Show Less";
+      } else {
+        fullContent.style.display = "none";
+        button.textContent = "Read More";
+      }
+    }
+  </script>
+</body>
+</html>
