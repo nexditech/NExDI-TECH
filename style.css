@@ -24,13 +24,13 @@ img{max-width:100%;height:auto;display:block;}
             background-position: center;
             padding: 20px;
             height: 300px;
-            color: gold;
+            color: #c99f53;
             text-align: center;
     
 
         }
         header a {
-            color:rgba(224, 193, 16, 0.829);
+            color:#c99f53;
             text-decoration: none;
             margin-top: 40px;
             
@@ -52,7 +52,7 @@ img{max-width:100%;height:auto;display:block;}
         } 
         .featurs{
             background-color: white;
-            color: rgba(223, 190, 8, 0.87);
+            color: #c99f53;
             padding: 20px;
             display: flex;
             flex-direction: row;
@@ -75,7 +75,7 @@ img{max-width:100%;height:auto;display:block;}
         }
         
         section{
-            background-color:rgba(202, 172, 2, 0.705);
+            background-color:#c99f53;
             color: black;
             padding: 20px;
             display: flex;
@@ -101,7 +101,7 @@ img{max-width:100%;height:auto;display:block;}
             height: auto;
             background: black;
             background-position: center;
-            border: rgb(228, 195, 10);
+            border: #c99f53;
             font-size: 18px;
             border-radius: 10px;
             cursor: pointer;
@@ -115,7 +115,7 @@ img{max-width:100%;height:auto;display:block;}
         }
         footer{
             background-color: black;
-            background-image: url("header.png");
+            background-image: url("inside.png");
             background-size: 100%;
             background-position: center;
             padding: 20px;
@@ -126,7 +126,7 @@ img{max-width:100%;height:auto;display:block;}
     
         }
         footer a{
-            color:rgba(255, 217, 0, 0.863);
+            color:#c99f53;
             text-decoration: none;
             padding: 20px;
             margin-top: 40px;
@@ -156,7 +156,7 @@ img{max-width:100%;height:auto;display:block;}
         .btn{
             width: 100px;
             height: 40px;
-            background: rgba(224, 193, 16, 0.829);
+            background: black;
             border: 2px solid rgba(26, 22, 2, 0.815);
             color: white;
             font-size: 15px;
