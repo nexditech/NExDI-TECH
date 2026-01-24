@@ -1,158 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NExDI</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="About NExDI Tech – New Era Digital Innovation company in Ibadan, Nigeria. Empowering youth through technology, AI, robotics, software, and digital skills training."/>
+  <title>About Us – NExDI Tech | New Era Digital Innovation</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #0d6efd;
+      --primary-dark: #0b5ed7;
+      --accent: #00d084;
+      --dark: #0f172a;
+      --gray: #64748b;
+      --light: #f8fafc;
+      --border: #e2e8f0;
+      --transition: all 0.4s ease;
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      line-height: 1.7;
+      color: var(--dark);
+      background: #fff;
+    }
+
+    /* Skip link for accessibility */
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 0;
+      background: var(--primary);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      z-index: 9999;
+      transition: top 0.3s;
+    }
+    .skip-link:focus { top: 0; }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: black;
+      border-bottom: 1px solid var(--border);
+      z-index: 1000;
+    }
+
+    nav {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 1.25rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    .logo-img {
+      height: 60px;
+      width: auto;
+      max-width: 180px;
+      object-fit: contain;
+    }
+
+    .logo-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--gray);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover { color: var(--primary); }
+
+    main { padding-top: 100px; }
+
+    .hero {
+      padding: 140px 5% 100px;
+      text-align: center;
+      background: linear-gradient(135deg, #f0f7ff 0%, #e6fff5 100%);
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 8vw, 4.8rem);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero p.lead {
+      font-size: clamp(1.2rem, 4vw, 1.5rem);
+      max-width: 800px;
+      margin: 0 auto 2.5rem;
+      color: var(--gray);
+    }
+
+    .section {
+      padding: 100px 5%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 6vw, 3.5rem);
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .content {
+      font-size: 1.15rem;
+      color: var(--gray);
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .content p {
+      margin-bottom: 1.8rem;
+    }
+
+    .founder-image {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 16px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+      margin: 3rem auto;
+      display: block;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .value-item {
+      background: white;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      text-align: center;
+    }
+
+    .value-item h3 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+    }
+
+    .cta {
+      text-align: center;
+      padding: 80px 5%;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+    }
+
+    .cta h2 { color: white; }
+
+    footer {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 4rem 5% 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero { padding: 120px 5% 80px; }
+      .section { padding: 60px 5%; }
+      .founder-image { max-width: 100%; }
+      .nav-links { display: none; } /* You can add hamburger later if needed */
+    }
+  </style>
 </head>
-
-<style>
-    *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:Arial, sans-serif;background:#f5f5f5;color:#333;line-height:1.6;min-height:100vh;display:flex;flex-direction:column;}
-.container{width:90%;max-width:1200px;margin:auto;padding:20px;}
-h1,h2,h3,p{word-wrap:break-word;}
-img{max-width:100%;height:auto;display:block;}
-.section{padding:40px 20px;}
-.row{display:flex;flex-wrap:wrap;gap:20px;}
-.col{flex:1;min-width:250px;background:#fff;padding:20px;border-radius:10px;}
-@media(max-width:768px){body{font-size:16px;}.section{padding:20px 10px;}}
-@media(max-width:480px){h1{font-size:24px;}.container{width:95%;padding:10px;}}
-
-</style>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li class="logo"><a href="index.html">NExDI logo</a></li>
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="contact us.html">LOGINS</a></li>
-                <li><a href="about us.html">ABOUT US</a></li>
 
-                <li><a href="our links.html">EXPLORE</a></li>
-            </ul>
-        </nav>
-    </header>
-    <section>
-        
-        <h1>ABOUT US</h1>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
+  <header>
+    <nav>
+      <div class="logo-container">
+        <!-- Company logo added here -->
+        <img src="logo.png" alt="NExDI Tech company logo" class="logo-img" onerror="this.style.display='none';">
+        <h1 class="logo-text">NExDI Tech</h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about us.html">About</a>
+        <a href="service.html">Services</a>
+        <a href="apply-internship.html">Internships</a>
+        <a href="contact us.html">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <section class="hero">
+      <h1>About NExDI Tech</h1>
+      <p class="lead">From one idea in Ibadan to empowering thousands across Africa</p>
     </section>
-    <SEction>
-        <img src="PICS/images (1).jpeg" alt="">
 
-    </SEction>
-   
+    <section class="section">
+      <div class="content">
+        <h2>The Founder's Story</h2>
+        <p>My name is Ndara, and I founded NExDI Tech because I saw two things clearly growing up in Nigeria:</p>
+        <p>First — the incredible talent and hunger to learn among young people. Second — the massive gap between that potential and real opportunity. I watched brilliant minds drop out of school or settle for jobs far below their ability because they lacked access to modern digital skills, mentorship, tools, and networks.</p>
+        <p>In 2023, after working in tech startups and seeing how fast the world was moving, I decided it was time to stop waiting for change to come from outside. I returned to Ibadan with a simple but bold vision: build a company that doesn't just talk about innovation — it creates it, teaches it, and makes it accessible to anyone willing to work hard.</p>
+        <p>The early days were tough. We started with one laptop, borrowed projectors, and free community halls. We ran our first coding and robotics workshops for secondary school students — many of whom had never touched a computer before. Seeing their eyes light up when their code made a robot move for the first time reminded me why I started this.</p>
+        <p>From those early days of free community trainings, we grew into a real company. We began delivering paid software projects, robotics solutions, and structured internship programs. We partnered with schools, NGOs, and local businesses. Every success story — a student landing their first remote job, a small business launching their app — fueled the next step.</p>
+        <p>Today, NExDI Tech stands as a symbol of what’s possible when talent meets opportunity. We’ve trained hundreds, built real-world solutions, and created a space where young Nigerians can dream big and actually achieve it. But we are just beginning.</p>
+        <p>This is not just a company. It is a movement — to prove that geography, background, or money should never limit what a Nigerian youth can achieve in the digital age.</p>
 
-    <section>
-        <h1> New Era Digital Innovation</h1>
-
-
-
-        <p class="par">NExDI is more than a tech company—it’s a movement. We are building a future where innovation meets opportunity, equipping people with Advanced skills, solutions, and mindset needed to succeed in the digital era.</p>
-
-        <button class="cn">
-            <img src="logo.png" alt="Community training at NExDI">
-            <a href="contact us.html">JOIN US</a></button>
+        <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Founder Ndara mentoring young students during a robotics and coding workshop" class="founder-image">
+      </div>
     </section>
-    <section>
-        <button class="HH">
-            <img src="logo.png" alt="Community training at NExDI">
-            <a href="our links.html">CLICK HERE!! TO ACCESS OUR LINKS AND CONNECTIONS</a></button>
-       
+
+    <section class="section" style="background:var(--light);">
+      <div class="content">
+        <h2>Our Vision & Mission</h2>
+        <p><strong>Vision:</strong> To become Africa’s leading hub for digital innovation — where every young person has the tools, knowledge, and confidence to shape the future.</p>
+        <p><strong>Mission:</strong> To deliver world-class technology solutions, provide practical digital education, and build an inclusive ecosystem that turns talent into real opportunity.</p>
+      </div>
     </section>
-    
-    <section>
-        <p class="par">
-            <ul>
-                <li><h1>OUR VISSION</h1></li>
-                <img src="PICS/alesia-kazantceva-XLm6-fPwK5Q-unsplash.jpg" alt="Community training at NExDI">
 
-                <li>To become Africa’s leading hub for digital innovation, transforming ideas into impactful solutions.</li>
-                
-            </ul>
-        </p>
-        <p class="par">
-            <ul>
-                <li><h1>OUR MISSION</h1></li>
-                <img src="PICS/alex-kotliarskyi-QBpZGqEMsKg-unsplash.jpg" alt="Community training at NExDI">
-
-                <li>To foster innovation that drives sustainable technological advancement for a better future.”</li>
-                
-            </ul>
-        </p>
+    <section class="section">
+      <h2>Our Core Values (NExDI)</h2>
+      <div class="values-grid">
+        <div class="value-item">
+          <h3>N – Nurturing Innovation</h3>
+          <p>We turn creative ideas into practical, scalable solutions.</p>
+        </div>
+        <div class="value-item">
+          <h3>E – Excellence</h3>
+          <p>We pursue the highest standards of quality and professionalism.</p>
+        </div>
+        <div class="value-item">
+          <h3>X – Xtraordinary Integrity</h3>
+          <p>Honesty, transparency, and accountability are non-negotiable.</p>
+        </div>
+        <div class="value-item">
+          <h3>D – Dedication</h3>
+          <p>We are fully committed to helping people and organizations reach their full potential.</p>
+        </div>
+        <div class="value-item">
+          <h3>I – Inclusion</h3>
+          <p>We believe diversity drives better results — everyone belongs.</p>
+        </div>
+      </div>
     </section>
-    <section>
-        <ul>    
-                <h2>🎯 Our Aims and Objectives</h2>
-          <li>To provide information technology, digital innovation, and software development services.</li>
-          <li>To offer training and capacity building in digital skills, programming, and emerging technologies.</li>
-          <li>To design, develop, and manage websites, applications, and digital platforms.</li>
-          <li>To organize technology-related trainings, workshops, and innovation programs.</li>
-          <li>To provide IT consultancy and digital transformation services.</li>
-          <li>To engage in any other lawful technology-related business incidental to the above objectives.</li>
-          <li>Provide high-quality training in web development, mobile apps, data science, AI, cloud computing, and cybersecurity.</li>
-          <li>Deliver professional IT services that help businesses scale digitally.</li>
-          <li>Build strong partnerships with schools, organizations, and industries to promote digital transformation.</li>
-          <li>Continuously innovate and adapt to emerging technologies to stay ahead in the digital space.</li>
-        </ul>
-      </section>
-    
-      <section>
-        <ul>
-            <h2>🚀 Our Goals</h2>
-          <li><strong>Digital Inclusion</strong> – To operate as a technology company providing innovative digital and IT solutions.</li>
-          <li><strong>Innovation Leadership</strong> –To build a competitive and scalable tech workforce and ecosystem.</li>
-          <li><strong>Capacity Building</strong> – To transform innovative ideas into market-ready products and services.</li>
-          <li><strong>Business Growth</strong> – To develop and deliver software products, digital platforms, and technology services.</li>
-          <li><strong>Sustainability</strong> – To generate sustainable revenue through technology services, products, and partnerships.</li>
-          <li><strong>Global Relevance</strong> – To establish a strong local market presence and expand into regional and global markets.</li>
-          <li><strong>Job Creation</strong> – To train and build skilled tech professionals capable of delivering industry-standard solutions.</li>
-        </ul><button class="HH">
-            <img src="logo.png" alt="Community training at NExDI">
-            <img src="founder.jpg.webp" alt="Community training at NExDI">
-            <a href="founder.html">CLICK HERE!! TO KNOW ABOUT OUR FOUNDER</a></button>
-      </section>
-      <section>
-          <h2>🚀 SLOGAN</h2>
-          <li><strong>"Advancement through digital innovation"</strong></li>
-      </section>
 
-      <section>
-        <ul>
-            <h1>🌟 Nexdi Core Values</h1>
-            <ul>
-                <img src="PICS/images (1).jpeg" alt="">
-
-                <li><strong>N</strong> – <strong>Nurturing Innovation</strong>: We turn creative ideas into practical, market-ready solutions.</li>
-                <li><strong>E</strong> – <strong>Excellence</strong>:We deliver quality, professionalism, and reliability in everything we do.</li>
-                <li><strong>X</strong> – <strong>Xtraordinary Integrity</strong>: Nexdi acts with honesty, transparency, and accountability.</li>
-                <li><strong>D</strong> – <strong>Dedication</strong>: Nexdi is dedicated to Advancing individuals to achieve their full potential through digital skills.</li>
-                <li><strong>I</strong> – <strong>Inclusion</strong>: We believe results matter more than concepts.</li>
-              </ul>
-        </ul>
-        <ul></ul>
-      </section>
-    <section>
-        <div class="search">
-            <input class="srch" type="search" name="" placeholder="type to text">
-            <a href="#"> <button class="btn">search</button></a>
-        </div> 
+    <section class="section" style="text-align:center;">
+      <h2>Join the Movement</h2>
+      <p style="font-size:1.3rem; max-width:700px; margin:0 auto 2.5rem;">
+        The NExDI Tech story is still being written — and we want you to help write the next chapter.
+      </p>
+      <div style="display:flex; justify-content:center; gap:1.5rem; flex-wrap:wrap;">
+        <a href="internship.html" style="background:var(--primary); color:white; padding:1rem 2rem; border-radius:8px; text-decoration:none; font-weight:600;">Apply for Internship</a>
+        <a href="contact us.html" style="border:2px solid var(--primary); color:var(--primary); padding:1rem 2rem; border-radius:8px; text-decoration:none; font-weight:600;">Get in Touch</a>
+      </div>
     </section>
-    <footer>
-       
-        <ul>
-            <li><a href="designs.html">DESIGNS</a></li>
-            <li><a href="location.html">LOCATION</a></li>
-              <li><a href="service.html">SERVICES </a></li>
 
-           
+  </main>
 
-        </ul>
-    </footer>
-
-
+  <footer>
+    <p>© 2026 NExDI Tech – New Era Digital Innovation<br>
+    123 Polo High Court, Ibadan, Oyo State, Nigeria<br>
+    +234 701 064 6417 | info@nexditech.com</p>
+  </footer>
 
 </body>
 </html>

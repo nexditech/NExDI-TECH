@@ -1,69 +1,375 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NExDI</title>
-    <!-- Font Awesome CDN for social media icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Contact NExDI Tech – Digital innovation company in Ibadan, Nigeria. Reach out for internships, services, partnerships, or inquiries."/>
+  <title>Contact Us – NExDI Tech | Ibadan, Nigeria</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #0d6efd;
+      --primary-dark: #0b5ed7;
+      --accent: #00d084;
+      --dark: #0f172a;
+      --gray: #64748b;
+      --light: #f8fafc;
+      --border: #e2e8f0;
+      --transition: all 0.4s ease;
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      line-height: 1.7;
+      color: var(--dark);
+      background: #fff;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 0;
+      background: var(--primary);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      z-index: 9999;
+      transition: top 0.3s;
+    }
+    .skip-link:focus { top: 0; }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background:black;
+      border-bottom: 1px solid var(--border);
+      z-index: 1000;
+    }
+
+    nav {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 1.25rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    .logo-img {
+      height: 60px;
+      width: auto;
+      max-width: 180px;
+      object-fit: contain;
+    }
+
+    .logo-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--gray);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover { color: var(--primary); }
+
+    main { padding-top: 100px; }
+
+    .hero {
+      padding: 140px 5% 100px;
+      text-align: center;
+      background: linear-gradient(135deg, #f0f7ff 0%, #e6fff5 100%);
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 8vw, 4.8rem);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-image {
+      width: 100%;
+      max-height: 500px;
+      object-fit: cover;
+      border-radius: 16px;
+      margin: 3rem auto 0;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    }
+
+    .section {
+      padding: 100px 5%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 6vw, 3.5rem);
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+    }
+
+    .contact-item i {
+      font-size: 2rem;
+      color: var(--primary);
+    }
+
+    .contact-item div {
+      flex: 1;
+    }
+
+    .contact-item h4 {
+      margin-bottom: 0.5rem;
+      color: var(--dark);
+    }
+
+    .contact-item a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .contact-item a:hover { text-decoration: underline; }
+
+    form {
+      margin-top: 3rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.8rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: var(--dark);
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.9rem 1.2rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.3s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--primary);
+      outline: none;
+    }
+
+    .form-group textarea {
+      min-height: 160px;
+      resize: vertical;
+    }
+
+    .btn {
+      background: var(--primary);
+      color: white;
+      padding: 1rem 2.5rem;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .map-container {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      height: 450px;
+    }
+
+    footer {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 4rem 5% 2rem;
+    }
+
+    @media (max-width: 900px) {
+      .contact-grid { grid-template-columns: 1fr; }
+      .hero { padding: 120px 5% 80px; }
+      .map-container { height: 350px; }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li class="logo"><a href="index.html">NExDI logo</a></li>
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="contact us.html">LOGINS</a></li>
-                <li><a href="about us.html">ABOUT US</a></li>
 
-                <li><a href="our links.html">EXPLORE</a></li>
-            </ul>
-        </nav>
-    </header>
-    <SEction>
-        <img skotliarskyirc="PICS/alex--QBpZGqEMsKg-unsplash.jpg" alt="Community training at NExDI">
+  <!-- Skip link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    </SEction>
+  <!-- Header with logo -->
+  <header>
+    <nav>
+      <div class="logo-container">
+        <img src="logo.png" alt="NExDI Tech company logo" class="logo-img" onerror="this.style.display='none';">
+        <h1 class="logo-text">NExDI Tech</h1>
+      </div>
 
-    <section>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about us.html">About</a>
+        <a href="service.html">Services</a>
+        <a href="apply-internship.html">Internships</a>
+        <a href="contact us.html">Contact</a>
+      </div>
+    </nav>
+  </header>
 
+  <main id="main-content">
 
-        <div class="form">
-            
-            <h2>Login Here</h2>
-            <form action="dashboard.html" method="post">
-                <label for="email">email address</label>
-                <input type="text" id="email" name="email" placeholder="Enter email address" required>
-          
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="Enter Password" required>
-          
-                <button type="submit" class="btn">Login</button>
-                <p class="note">Forgot Password? <a href="forgot-password.html">Click here</a></p>
-              </form>
-            <p class="link">Don't have an account?<br>
-                <a href="sign-uo.html">Sign up</a> Here
-            </p>
-
-
-
-                
-        
+    <!-- Hero -->
+    <section class="hero">
+      <h1>Contact Us</h1>
+      <p class="lead">We're here to help. Reach out for internships, partnerships, services, or any questions.</p>
+      <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Modern tech team collaborating in office" class="hero-image">
     </section>
-    <section>
-      
-       
+
+    <!-- Contact Section -->
+    <section class="section">
+      <div class="contact-grid">
+        <!-- Contact Info + Form -->
+        <div>
+          <h2>Get in Touch</h2>
+
+          <div class="contact-info">
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <h4>Address</h4>
+                <p>123 Polo High Court<br>Ibadan, Oyo State, Nigeria</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <i class="fas fa-phone-alt"></i>
+              <div>
+                <h4>Phone</h4>
+                <p><a href="tel:+2347010646417">+234 701 064 6417</a></p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <h4>Email</h4>
+                <p><a href="mailto:info@nexditech.com">info@nexditech.com</a></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <form action="https://api.web3forms.com/submit" method="POST" style="margin-top: 3rem;">
+            <input type="hidden" name="access_key" value="7899a8eb-b8c4-49f6-a828-34c796b11587">
+            <input type="hidden" name="subject" value="New Contact Message - NExDI Tech Website">
+
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" required placeholder="Your name">
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="+234 ...">
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" required placeholder="How can we help you?"></textarea>
+            </div>
+
+            <button type="submit" class="btn">Send Message</button>
+          </form>
+        </div>
+
+        <!-- Map + Image -->
+        <div>
+          <h2>Our Location</h2>
+          <div class="map-container">
+            <!-- Replace with your real Google Maps embed -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.5!2d3.896!3d7.377!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1039ed!2sIbadan!5e0!3m2!1sen!2sng!4v1690000000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+
+          <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="NExDI Tech office and team environment" style="width:100%; border-radius:16px; margin-top:2rem; box-shadow:0 10px 30px rgba(0,0,0,0.08);">
+        </div>
+      </div>
     </section>
-    <footer>
-        <ul>
-            <li><a href="designs.html">DESIGNS</a></li>
-            <li><a href="location.html">LOCATION</a></li>
-            <li><a href="service.html">SERVICES</a></li>
-        </ul>
-    </footer>
-    <script src="CONTACT.JS"></script>
+
+    <!-- CTA -->
+    <section class="cta">
+      <h2>Ready to Work Together?</h2>
+      <p style="font-size:1.3rem; max-width:700px; margin:0 auto 2.5rem;">
+        Whether it's an internship, partnership, project, or question — we'd love to hear from you.
+      </p>
+      <a href="#main-content" class="btn" style="background:white; color:var(--primary);">Send a Message</a>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 NExDI Tech – New Era Digital Innovation<br>
+    123 Polo High Court, Ibadan, Oyo State, Nigeria<br>
+    +234 701 064 6417 | info@nexditech.com</p>
+  </footer>
+
+  <!-- Font Awesome for icons (optional) -->
+  <script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script>
+
 </body>
-
 </html>

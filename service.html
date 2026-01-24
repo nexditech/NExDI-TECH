@@ -1,112 +1,380 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NExDI</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="NExDI Tech Services – AI, robotics, software development, digital training & tech consulting in Ibadan, Nigeria."/>
+  <title>Services – NExDI Tech | New Era Digital Innovation</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #0d6efd;
+      --primary-dark: #0b5ed7;
+      --accent: #00d084;
+      --dark: #0f172a;
+      --gray: #64748b;
+      --light: #f8fafc;
+      --border: #e2e8f0;
+      --transition: all 0.4s ease;
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      line-height: 1.7;
+      color: var(--dark);
+      background: #fff;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 0;
+      background: var(--primary);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      z-index: 9999;
+      transition: top 0.3s;
+    }
+    .skip-link:focus { top: 0; }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background:black;
+      border-bottom: 1px solid var(--border);
+      z-index: 1000;
+    }
+
+    nav {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 1.25rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    .logo-img {
+      height: 60px;
+      width: auto;
+      max-width: 180px;
+      object-fit: contain;
+    }
+
+    .logo-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--gray);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover { color: var(--primary); }
+
+    main { padding-top: 100px; }
+
+    .hero {
+      padding: 140px 5% 100px;
+      text-align: center;
+      background: linear-gradient(135deg, #f0f7ff 0%, #e6fff5 100%);
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 8vw, 4.8rem);
+      margin-bottom: 1rem;
+      color: var(--dark);
+    }
+
+    .hero .slogan {
+      font-size: 1.6rem;
+      font-style: italic;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero p.lead {
+      font-size: clamp(1.2rem, 4vw, 1.5rem);
+      max-width: 800px;
+      margin: 0 auto 2.5rem;
+      color: var(--gray);
+    }
+
+    .section {
+      padding: 100px 5%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 6vw, 3.5rem);
+      text-align: center;
+      margin-bottom: 3rem;
+      color: var(--dark);
+    }
+
+    h2 span {
+      color: var(--primary);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .service-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      transition: var(--transition);
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      position: relative;
+    }
+
+    .service-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 20px 50px rgba(13,110,253,0.15);
+    }
+
+    .service-image {
+      height: 260px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .service-brand-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(13,110,253,0.7) 0%, transparent 100%);
+      padding: 1.5rem;
+      color: white;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .service-content {
+      padding: 2rem 1.8rem;
+    }
+
+    .service-content h3 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      color: var(--dark);
+    }
+
+    .service-content p {
+      color: var(--gray);
+      font-size: 1.05rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .service-benefits {
+      font-size: 0.95rem;
+      color: var(--gray);
+    }
+
+    .service-benefits ul {
+      list-style: disc;
+      padding-left: 1.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .cta {
+      text-align: center;
+      padding: 80px 5%;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+    }
+
+    .cta h2 { color: white; margin-bottom: 1.5rem; }
+
+    footer {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 4rem 5% 2rem;
+    }
+
+    @media (max-width: 900px) {
+      .services-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    }
+
+    @media (max-width: 600px) {
+      .hero { padding: 120px 5% 80px; }
+      .section { padding: 80px 5%; }
+    }
+  </style>
 </head>
-<style>
-    *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:Arial, sans-serif;background:#f5f5f5;color:#333;line-height:1.6;min-height:100vh;display:flex;flex-direction:column;}
-.container{width:90%;max-width:1200px;margin:auto;padding:20px;}
-h1,h2,h3,p{word-wrap:break-word;}
-img{max-width:100%;height:auto;display:block;}
-.section{padding:40px 20px;}
-.row{display:flex;flex-wrap:wrap;gap:20px;}
-.col{flex:1;min-width:250px;background:#fff;padding:20px;border-radius:10px;}
-@media(max-width:768px){body{font-size:16px;}.section{padding:20px 10px;}}
-@media(max-width:480px){h1{font-size:24px;}.container{width:95%;padding:10px;}}
-
-</style>
 <body>
-    <header>
-        <nav>
-            <ul><li class="logo"><a href="index.html">NExDI logo</a></li>
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="contact us.html">LOGINS</a></li>
-                <li><a href="about us.html">ABOUT US</a></li>
 
-                <li><a href="our links.html">EXPLORE</a></li>
-               
-            </ul>
-        </nav>
-    </header>
-    <SEction>
-        <h1>SERVIVES WE RENDER</h1>
+  <!-- Skip link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    </SEction>
-    <SECtion>
-        <img src="PICS/alesia-kazantceva-XLm6-fPwK5Q-unsplash.jpg" alt="Community training at NExDI">
+  <!-- Header with logo -->
+  <header>
+    <nav>
+      <div class="logo-container">
+        <img src="logo.png" alt="NExDI Tech company logo" class="logo-img" onerror="this.style.display='none';">
+        <h1 class="logo-text">NExDI Tech</h1>
+      </div>
 
-    </SECtion>
-    <section>
-        
-        <p class="par">
-            <ul>
-                <li>1. Web Development (Front-end & Back-end)</li>
-                <li>2. Mobile App Development</li>
-                <li>3. Data Analysis & Visualization</li>
-                <li>4. Cybersecurity Basics</li>
-                <li>5. Cloud Computing (AWS, Azure, Google Cloud)</li>
-                
-            </ul>
-        </p>
-        <p class="par">
-            <ul>
-                <li>6. Artificial Intelligence & Machine Learning</li>
-                <li>7. Build tech solutions</li>
-                <li>8. Collaborate on projects</li>
-                <li>9. Access mentorship from industry experts</li>
-                <li>10. Website & App Development</li>
-                
-               
-            </ul>
-        </p>
-        <p class="par">
-         <ul>
-            <li>11. Digital Marketing & SEO</li>
-            <li>12. Branding & Graphic Design</li>
-            <li>13. Tech Consulting Services</li>
-            <li>14. Bootcamps & Workshops</li>
-            <li>15. Internship & Job Placement Programs</li>
-        </ul>
-            <button class="cn">
-                <img src="logo.png" alt="Community training at NExDI">
-                <a href="contact us.html">JOIN US</a></button>
-            
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about us.html">About</a>
+        <a href="service.html">Services</a>
+        <a href="apply-internship.html">Internships</a>
+        <a href="contact us.html">Contact</a>
+      </div>
+    </nav>
+  </header>
 
+  <main id="main-content">
 
+    <!-- Hero -->
+    <section class="hero">
+      <h1>Our Services</h1>
+      <p class="lead">"Advancing minds today for the innovations of tomorrow" — NExDI Tech delivers real-world digital solutions across Nigeria and Africa.</p>
     </section>
-    <section>
-        <button class="HH">
-            <img src="logo.png" alt="Community training at NExDI">
-            <a href="designs.html">CLICK HERE!! TO SEE OUR DESIGNS</a></button>
-       
-       
-    </section>
-    <section>
-        <div class="search">
-            <input class="srch" type="search" name="" placeholder="type to text">
-            <a href="#"> <button class="btn">search</button></a>
-        </div> 
-    </section>
-    <section>
-        
-    </section>
-    <footer>
-        
-        <ul>
-            <li><a href="designs.html">DESIGNS</a></li>
-            <li><a href="location.html">LOCATION</a></li>
-            <li><a href="service.html">SERVICES </a></li>
 
-         
-            
+    <!-- Services -->
+    <section class="section">
+      <h2>NExDI-Powered <span>Services</span></h2>
+      <div class="services-grid">
+        <!-- AI & Software Development -->
+        <a href="#ai-software" class="service-card">
+          <div class="service-image" style="background-image: url('https://images.pexels.com/photos/17483873/pexels-photo-17483873/free-photo-of-an-artist-s-illustration-of-artificial-intelligence-ai-this-image-was-inspired-neural-networks-used-in-deep-learning-it-was-created-by-novoto-studio-as-part-of-the-visualising-ai-proje.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
+            <div class="service-brand-overlay">NExDI AI & Software</div>
+          </div>
+          <div class="service-content">
+            <h3>AI & Software Development</h3>
+            <p>Custom software powered by artificial intelligence — built to solve your unique challenges and scale your business.</p>
+            <div class="service-benefits">
+              <strong>Key offerings:</strong>
+              <ul>
+                <li>Web & mobile applications</li>
+                <li>AI/ML model development & integration</li>
+                <li>Chatbots, predictive analytics & automation</li>
+                <li>Enterprise systems & API solutions</li>
+              </ul>
+              <strong>Ideal for:</strong> SMEs, startups, schools, government agencies
+            </div>
+          </div>
+        </a>
 
-        </ul>
+        <!-- Robotics & Automation -->
+        <a href="#robotics" class="service-card">
+          <div class="service-image" style="background-image: url('https://images.pexels.com/photos/2599244/pexels-photo-2599244.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
+            <div class="service-brand-overlay">NExDI Robotics</div>
+          </div>
+          <div class="service-content">
+            <h3>Robotics & Automation</h3>
+            <p>End-to-end robotics solutions — from educational tools to industrial automation systems designed for real impact.</p>
+            <div class="service-benefits">
+              <strong>Key offerings:</strong>
+              <ul>
+                <li>Custom robot design & prototyping</li>
+                <li>Educational robotics kits & workshops</li>
+                <li>Industrial automation & process optimization</li>
+                <li>Research lab & STEM robotics setups</li>
+              </ul>
+              <strong>Ideal for:</strong> Schools, universities, factories, research centers
+            </div>
+          </div>
+        </a>
 
-    </footer>
+        <!-- Digital Skills Training -->
+        <a href="#training" class="service-card">
+          <div class="service-image" style="background-image: url('https://images.pexels.com/photos/4144923/pexels-photo-4144923.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
+            <div class="service-brand-overlay">NExDI Training</div>
+          </div>
+          <div class="service-content">
+            <h3>Digital Skills Training</h3>
+            <p>Practical, job-ready programs that equip youth and professionals with the digital skills needed for tomorrow's economy.</p>
+            <div class="service-benefits">
+              <strong>Key offerings:</strong>
+              <ul>
+                <li>Coding, web & app development bootcamps</li>
+                <li>Cybersecurity, data science & AI courses</li>
+                <li>Robotics & hardware training</li>
+                <li>Corporate & institutional upskilling</li>
+              </ul>
+              <strong>Ideal for:</strong> Students, graduates, career switchers, companies
+            </div>
+          </div>
+        </a>
+
+        <!-- Tech Consulting & Setups -->
+        <a href="#consulting" class="service-card">
+          <div class="service-image" style="background-image: url('https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
+            <div class="service-brand-overlay">NExDI Consulting</div>
+          </div>
+          <div class="service-content">
+            <h3>Tech Consulting & Setups</h3>
+            <p>Strategic guidance and complete infrastructure solutions to help organizations go fully digital and stay competitive.</p>
+            <div class="service-benefits">
+              <strong>Key offerings:</strong>
+              <ul>
+                <li>Digital transformation strategy</li>
+                <li>IT infrastructure & smart lab setup</li>
+                <li>Technology audits & advisory</li>
+                <li>Innovation lab creation & management</li>
+              </ul>
+              <strong>Ideal for:</strong> Businesses, schools, NGOs, government
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section" style="text-align:center; background:linear-gradient(135deg, var(--primary), var(--accent)); color:white;">
+      <h2>Ready to Bring Your Vision to Life?</h2>
+      <p style="font-size:1.3rem; max-width:700px; margin:0 auto 2.5rem;">
+        Partner with NExDI Tech to access cutting-edge services built for African innovation and growth.
+      </p>
+      <a href="contact us.html" style="background:white; color:var(--primary); padding:1rem 2.5rem; border-radius:8px; text-decoration:none; font-weight:600;">Get Started Today</a>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 NExDI Tech – New Era Digital Innovation<br>
+    123 Polo High Court, Ibadan, Oyo State, Nigeria<br>
+    +234 701 064 6417 | info@nexditech.com</p>
+  </footer>
+
 </body>
 </html>
