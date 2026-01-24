@@ -1,217 +1,318 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NExDITECH</title>
-</head>
-<style>
-  *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:Arial, sans-serif;background:#f5f5f5;color:#333;line-height:1.6;min-height:100vh;display:flex;flex-direction:column;}
-.container{width:90%;max-width:1200px;margin:auto;padding:20px;}
-h1,h2,h3,p{word-wrap:break-word;}
-img{max-width:100%;height:auto;display:block;}
-.section{padding:40px 20px;}
-.row{display:flex;flex-wrap:wrap;gap:20px;}
-.col{flex:1;min-width:250px;background:#fff;padding:20px;border-radius:10px;}
-@media(max-width:768px){body{font-size:16px;}.section{padding:20px 10px;}}
-@media(max-width:480px){h1{font-size:24px;}.container{width:95%;padding:10px;}}
-
-</style>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="contact us.html">LOGINS</a></li>
-                <li class="moble"><a href="service.html">SERVICES </a></li>
-                <li class="logo"><a href="index.html">NExDI logo</a></li>
-                <li><a href="about us.html">ABOUT US</a></li>
-                <li><a href="our links.html">EXPLORE</a></li>
-               
-               
-                
-            </ul>
-           
-        </nav>
-         
-    
-
-    </header>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NExDI Tech - Digital Innovation Company | Ibadan, Nigeria</title>
   
-    <section>
-        <div class="search">
-          <h3>Internship Program</h3>
-          <p>We welcome students and fresh graduates to learn and grow with us.</p>
+  <style>
+    :root {
+      --primary: #0d6efd;
+      --primary-dark: #0b5ed7;
+      --accent: #00d084;
+      --dark: #0f172a;
+      --light: #f8fafc;
+      --gray: #64748b;
+      --transition: all 0.4s ease;
+    }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:'Segoe UI', system-ui, sans-serif; line-height:1.7; color:#1e293b; background:#fff; overflow-x:hidden; }
 
+    header {
+      background:linear-gradient(135deg, var(--dark) 0%, #1e293b 100%);
+      color:white;
+      padding:1.2rem 5%;
+      position:fixed;
+      width:100%;
+      top:0;
+      z-index:2000;
+      box-shadow:0 4px 25px rgba(0,0,0,0.3);
+      transition:var(--transition);
+    }
+    header.scrolled { background:rgba(15,23,42,0.95); backdrop-filter:blur(10px); padding:0.8rem 5%; }
 
-            <a href="apply-intership.html"> <button class="btn">APPLY NOW</button></a>
-        </div>
-    </section>
-    
-    <section class="gg">
-        <p>
-            <h1 class="a"> NEW ERA DIGITAL INNOVATION (NExDI)</h1>
-        </p>
-    </section>
+    nav { display:flex; justify-content:space-between; align-items:center; max-width:1400px; margin:0 auto; }
+    .logo-container { display:flex; align-items:center; gap:1.2rem; }
+    .logo-img { height:60px; width:auto; }
+    .logo-text { font-size:2.2rem; font-weight:900; background:linear-gradient(90deg, var(--primary), var(--accent)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
 
-    
-    
-    <section class="features">
-      <figure>
-        <img src="inav.jpg" alt="NExDI setups">
-        <figcaption>NExDI Innovation</figcaption>
-      </figure>
-    
-      <figure>
-        <img src="people.jpg" alt="Community training at NExDI">
-        <figcaption>NExDI Innovation awareness</figcaption>
-      </figure>
-    
-      <figure class="fur">
-        <a href="news.html">
-          <img src="starlight.jpg" alt="NExDITECH showcase">
-          <figcaption><NExDI-NEWS>NExDI-NEWS</NExDI-NEWS></figcaption>
-        </a>
-      </figure>
-    
-      <figure>
-        <img src="robot.jpg" alt="Robotics services">
-        <figcaption>NExDI Robotic Services</figcaption>
-      </figure>
-    
-      <figure>
-        <img src="dex.jpg" alt="Tech setups">
-        <figcaption>NExDI Setups</figcaption>
-      </figure>
-    </section>
-    
-    <section>
-        <p>
-            <h1>NEW ERA DIGITAL INNOVATION (NExDI)</h1>
-        </p>
-    </section>
-    
-    <section>
-   
+    .nav-links { display:flex; gap:2.5rem; }
+    .nav-links a { color:white; text-decoration:none; font-weight:600; font-size:1.1rem; padding:0.8rem 1.2rem; border-radius:50px; transition:var(--transition); }
+    .nav-links a:hover, .nav-links a.active { background:rgba(255,255,255,0.15); }
 
+    .hamburger { display:none; font-size:2.2rem; background:none; border:none; color:white; cursor:pointer; z-index:3000; }
+    .overlay { position:fixed; inset:0; background:rgba(0,0,0,0.7); opacity:0; visibility:hidden; transition:opacity 0.4s; z-index:2500; }
+    .mobile-menu { position:fixed; top:0; right:-100%; width:80%; max-width:320px; height:100%; background:linear-gradient(135deg, var(--dark), #1e293b); padding:6rem 2rem 2rem; transition:right 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); z-index:3000; }
+    .mobile-menu.active { right:0; }
+    .mobile-menu a { display:block; color:white; text-decoration:none; font-size:1.4rem; margin:1.5rem 0; padding:1rem; border-radius:12px; transition:var(--transition); }
+    .mobile-menu a:hover { background:rgba(255,255,255,0.1); }
 
-       
-        <p class="par">
-          <img src="PICS/images (1).jpeg" alt="">
-          NExDI is more than a tech company—it’s a movement. We are building a future where innovation meets opportunity, Advanced skills, solutions, and mindset needed to succeed in the digital era.</p>
+    .hero { min-height:90vh; background:linear-gradient(rgba(13,110,253,0.45), rgba(0,208,132,0.35)), url('https://images.pexels.com/photos/9215843/pexels-photo-9215843.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') center/cover no-repeat fixed; color:white; text-align:center; display:flex; align-items:center; justify-content:center; padding:0 5%; position:relative; }
+    .hero-content { max-width:1100px; animation:fadeUp 1.5s ease-out; }
+    @keyframes fadeUp { from { opacity:0; transform:translateY(60px); } to { opacity:1; transform:none; } }
+    .hero h1 { font-size:4.5rem; font-weight:900; margin-bottom:1.5rem; text-shadow:0 6px 20px rgba(0,0,0,0.6); }
+    .hero .slogan { font-size:2rem; font-style:italic; margin-bottom:2.5rem; opacity:0.9; }
 
-        <button class="cn">
-          <img src="logo.png" alt="Community training at NExDI">
-          <a href="contact us.html">JOIN US</a></button>
-    </section>
-    <section>
-        <button class="HH">
-          <img src="logo.png" alt="Community training at NExDI">
-          <a href="about us.html">CLICK HERE!! FOR MORE INFORMATIONS ABOUT</a></button>
-       
-    </section>
-    <section>
-        <p class="par">
-            <ul>
-                <li><h1>OUR VISSION</h1></li>
-                <img src="PICS/images (1).jpeg" alt="">
+    .btn { background:var(--primary); color:white; padding:1.2rem 3rem; border-radius:60px; text-decoration:none; font-weight:700; font-size:1.2rem; margin:1rem; display:inline-block; box-shadow:0 10px 30px rgba(13,110,253,0.4); transition:var(--transition); }
+    .btn:hover { transform:translateY(-6px) scale(1.05); box-shadow:0 20px 50px rgba(13,110,253,0.6); }
 
+    .section { padding:100px 5%; max-width:1400px; margin:0 auto; opacity:0; transform:translateY(40px); transition:opacity 1s, transform 1s; }
+    .section.visible { opacity:1; transform:none; }
+    h2 { text-align:center; font-size:3.2rem; margin-bottom:4rem; color:var(--dark); position:relative; }
+    h2::after { content:''; width:120px; height:6px; background:linear-gradient(90deg, var(--primary), var(--accent)); position:absolute; bottom:-20px; left:50%; transform:translateX(-50%); border-radius:3px; }
 
-                <li>To become Africa’s leading hub for digital innovation, transforming ideas into impactful solutions and creating a future where technology drives inclusive growth and opportunities for all.</li>
-                
-            </ul>
-        </p>
-        <p class="par">
-            <ul>
+    .stats { display:flex; justify-content:center; flex-wrap:wrap; gap:5rem; text-align:center; }
+    .stat-item { font-size:1.3rem; }
+    .stat-item strong { font-size:4.5rem; color:var(--primary); display:block; margin-bottom:0.5rem; }
 
-                <li><h1>OUR MISION</h1></li>
-                <img src="PICS/IMG-20260110-WA0059.jpg" alt="">
+    .features { display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:2.5rem; }
+    .card { background:white; padding:2.5rem; border-radius:20px; text-align:center; box-shadow:0 15px 40px rgba(0,0,0,0.1); transition:var(--transition); position:relative; overflow:hidden; }
+    .card:hover { transform:translateY(-15px); box-shadow:0 25px 60px rgba(13,110,253,0.2); }
 
-                <li>To foster innovation that drives sustainable technological advancement for a better future.”</li>
-                
-            </ul>
-               <section>
-        <button class="HH">
-          <img src="logo.png" alt="Community training at NExDI">
-          <img src="founder.jpg.webp" alt="Community training at NExDI">
-          <a href="founder.html">CLICK HERE!! TO CONNECT TO OUR FOUNDER</a></button>
+    .testimonials { display:grid; grid-template-columns:repeat(auto-fit, minmax(340px, 1fr)); gap:2rem; }
+    .testimonial { background:var(--light); padding:2rem; border-radius:16px; border-left:5px solid var(--primary); font-style:italic; }
 
-      </section>
-        </p>
-    </section>
-    <section>
-        <h2>Our Motivation</h2>
+    .gallery { display:grid; grid-template-columns:repeat(auto-fit, minmax(340px, 1fr)); gap:2rem; }
+    .gallery img { width:100%; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,0.15); transition:0.4s; }
+    .gallery img:hover { transform:scale(1.04); }
 
-        <p>
-          <img src="PICS/images (1).jpeg" alt="Community training at NExDI">
+    .faq-item { margin-bottom:1.5rem; border-bottom:1px solid #e2e8f0; }
+    .faq-question { width:100%; text-align:left; padding:1.2rem; background:none; border:none; font-size:1.3rem; font-weight:600; cursor:pointer; display:flex; justify-content:space-between; align-items:center; }
+    .faq-answer { max-height:0; overflow:hidden; transition:max-height 0.5s; padding:0 1.2rem; }
 
-          At <strong>NExDI</strong>, we believe technology is more than tools—it is the power 
-          to change lives, create opportunities, and solve real problems.  
-          Our motivation comes from the passion to inspire youths, bridge the digital divide, 
-          and build a future where innovation belongs to everyone.
-        </p>
-        <blockquote>
-          “Advancing minds today for the innovations of tomorrow.”
-        </blockquote>
-      </section>
-    
-      <section>
-        <h2>Why We Do What We Do</h2>
-        <p>
+    #back-to-top { position:fixed; bottom:30px; right:30px; background:var(--primary); color:white; width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.8rem; cursor:pointer; opacity:0; visibility:hidden; transition:var(--transition); box-shadow:0 5px 15px rgba(0,0,0,0.3); }
+    #back-to-top.visible { opacity:1; visibility:visible; }
 
-          Our motivation comes from the challenges around us. We see problems 
-          as opportunities to innovate, and we believe that with knowledge 
-          and creativity, young minds can build a brighter tomorrow.
-        </p>
-        <blockquote>
-          “Every challenge is a chance to innovate.”
-        </blockquote>
-      </section>
-      <section>
-        <h2>Our Driving Force</h2>
-        <p>
-          <img src="people.jpg" alt="Community training at NExDI">
+    footer { background:var(--dark); color:white; text-align:center; padding:4rem 5% 2rem; }
 
-          We are inspired by the power of technology to connect, transform, 
-          and uplift communities. Our drive is to make tech skills accessible.
-        </p>
-        <blockquote>
-          “Technology belongs to everyone.”
-        </blockquote>
-      </section>
-      <section>
-        <h2>Inspired to Empower</h2>
-        <p>
+    @media (max-width: 900px) {
+      .hamburger { display:block; }
+      .nav-links { display:none; }
+      .hero h1 { font-size:3.2rem; }
+      .stats { gap:3rem; flex-direction:column; }
+    }
+  </style>
+</head>
+<body>
 
-          The success of one youth can inspire a community. That is why NExDI 
-          is motivated to mentor, and guide the next generation of leaders 
-          who will transform society through innovation.
-        </p>
-        <blockquote>
-          “Advance one, inspire many.”
-        </blockquote>
-      </section>
-    
-    
-<footer>
-      
-    <ul>
-        <li class="desktop"><a href="designs.html">DESIGNS</a></li>
-        <li><a href="location.html">LOCATION</a></li>
-        <li class="desktop"><a href="service.html">SERVICES </a></li>
-       
-     
+  <header id="header">
+    <nav>
+      <div class="logo-container">
+        <img src="logo.png" alt="NExDI Tech Logo" class="logo-img" onerror="this.style.display='none';">
+        <h1 class="logo-text">NExDI Tech</h1>
+      </div>
 
-    </ul>
-        <p>&copy; 2025 NExDI. All rights reserved.</p>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about us.html">About</a>
+        <a href="service.html">Services</a>
+        <a href="apply-internship.html">Internships</a>
+        <a href="contact us.html">Contact</a>
+      </div>
 
-    123 polo high court . 07010646417 .us@me.com
-     
-</footer>
-<script src="dev.js"></script>
+      <button class="hamburger" aria-label="Toggle menu">&#9776;</button>
+    </nav>
+  </header>
+
+  <div class="overlay" id="overlay"></div>
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="hamburger" style="position:absolute; top:1.5rem; right:1.5rem;" aria-label="Close menu">&times;</button>
+    <a href="index.html">Home</a>
+    <a href="about us.html">About</a>
+    <a href="service.html">Services</a>
+    <a href="apply-internship.html">Internships</a>
+    <a href="contact us.html">Contact</a>
+  </div>
+
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Powering Africa's Digital Future</h1>
+      <div class="slogan">Advancing minds today for the innovations of tomorrow</div>
+      <p style="font-size:1.5rem; max-width:900px; margin:2rem auto;">
+        NExDI Tech delivers cutting-edge AI, robotics, software solutions, digital training, and youth empowerment programs from Ibadan, Nigeria.
+      </p>
+      <a href="apply-internship.html" class="btn">Apply for Internship Now</a>
+      <a href="contact us.html" class="btn" style="background:var(--accent);">Get in Touch</a>
+    </div>
+  </section>
+
+  <section class="section" id="stats">
+    <h2>Our Impact at a Glance</h2>
+    <div class="stats">
+      <div class="stat-item"><strong data-count="750">0</strong> Talents Empowered</div>
+      <div class="stat-item"><strong data-count="65">0</strong> Projects Delivered</div>
+      <div class="stat-item"><strong data-count="25">0</strong> Workshops & Trainings</div>
+      <div class="stat-item"><strong data-count="100">0</strong>% Youth-Focused</div>
+    </div>
+  </section>
+
+  <section class="section" id="services" style="background:var(--light);">
+    <h2>Our Core Services</h2>
+    <div class="features">
+      <div class="card"><h3>AI & Software Development</h3><p>Custom apps, web/mobile solutions, machine learning integration</p></div>
+      <div class="card"><h3>Robotics & Automation</h3><p>Hardware prototyping, lab setups, robotic services</p></div>
+      <div class="card"><h3>Digital Skills Training</h3><p>Bootcamps, certifications in coding, cybersecurity, data</p></div>
+      <div class="card"><h3>Tech Consulting & Setups</h3><p>Business digital transformation, innovation labs</p></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>What People Say About Us</h2>
+    <div class="testimonials">
+      <div class="testimonial">
+        “NExDI Tech internship gave me real-world robotics experience — best decision for my career!”  
+        — Adebayo O., 2025 Intern
+      </div>
+      <div class="testimonial">
+        “Professional team, excellent training programs. Highly recommend for youth empowerment.”  
+        — Fatima A., Workshop Participant
+      </div>
+      <div class="testimonial">
+        “Delivered our custom software on time and exceeded expectations.”  
+        — Business Client, Ibadan
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--light);">
+    <h2>Our Core Values (NExDI)</h2>
+    <div class="features">
+      <div class="card"><h3>N – Nurturing Innovation</h3><p>Turning ideas into real solutions</p></div>
+      <div class="card"><h3>E – Excellence</h3><p>Top quality in everything we do</p></div>
+      <div class="card"><h3>X – Xtraordinary Integrity</h3><p>Trust and transparency first</p></div>
+      <div class="card"><h3>D – Dedication</h3><p>Committed to your success</p></div>
+      <div class="card"><h3>I – Inclusion</h3><p>Everyone belongs and contributes</p></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Our Work in Action</h2>
+    <div class="gallery">
+      <img src="inav.jpg" alt="Innovation Setup">
+      <img src="people.jpg" alt="Community Training">
+      <img src="robot.jpg" alt="Robotics Project">
+      <img src="dex.jpg" alt="Tech Demo">
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Frequently Asked Questions</h2>
+    <div>
+      <div class="faq-item">
+        <button class="faq-question">How long are your internships? <span>+</span></button>
+        <div class="faq-answer">Most run 3–6 months, with flexible full-time or part-time options.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Do you offer remote work? <span>+</span></button>
+        <div class="faq-answer">Yes, many roles support hybrid or fully remote arrangements.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Where are you located? <span>+</span></button>
+        <div class="faq-answer">Based in Ibadan, Oyo State, Nigeria — serving clients across Africa.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:linear-gradient(135deg, #f0f9ff, #e0f2fe); text-align:center;">
+    <h2>Stay Connected with NExDI Tech</h2>
+    <p style="font-size:1.4rem; max-width:700px; margin:0 auto 2rem;">Get updates on internships, tech news, workshops, and opportunities.</p>
+    <form action="https://api.web3forms.com/submit" method="POST" style="max-width:500px; margin:0 auto; display:flex; flex-wrap:wrap; gap:1rem; justify-content:center;">
+      <input type="hidden" name="access_key" value="7899a8eb-b8c4-49f6-a828-34c796b11587">
+      <input type="hidden" name="subject" value="Newsletter Signup - NExDI Tech">
+      <input type="email" name="email" placeholder="Enter your email" required style="flex:1; padding:1rem; border-radius:50px; border:1px solid #ccc; min-width:250px;">
+      <button type="submit" class="btn">Subscribe Now</button>
+    </form>
+  </section>
+
+  <section class="section" style="text-align:center; background:linear-gradient(135deg, var(--primary), var(--accent)); color:white;">
+    <h2>Ready to Join the Future?</h2>
+    <p style="font-size:1.6rem; max-width:800px; margin:0 auto 2.5rem;">Apply for our internship, partner with us, or start your digital journey today.</p>
+    <a href="apply-internship.html" class="btn" style="background:white; color:var(--primary);">Apply Internship</a>
+    <a href="contact us.html" class="btn" style="border:2px solid white; background:transparent;">Contact Us</a>
+  </section>
+
+  <footer>
+    <p>© 2026 NExDI Tech – New Era Digital Innovation. All rights reserved.</p>
+    <p>123 Polo High Court, Ibadan, Oyo State, Nigeria | +234 701 064 6417 | info@nexditech.com</p>
+  </footer>
+
+  <button id="back-to-top" aria-label="Back to top">↑</button>
+
+  <script>
+    // Hamburger Menu
+    const hamburger = document.querySelector('.hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const overlay = document.getElementById('overlay');
+    const closeBtn = mobileMenu.querySelector('.hamburger');
+
+    function toggleMenu() {
+      mobileMenu.classList.toggle('active');
+      overlay.style.opacity = mobileMenu.classList.contains('active') ? '1' : '0';
+      overlay.style.visibility = mobileMenu.classList.contains('active') ? 'visible' : 'hidden';
+    }
+
+    hamburger.addEventListener('click', toggleMenu);
+    closeBtn.addEventListener('click', toggleMenu);
+    overlay.addEventListener('click', toggleMenu);
+
+    // Header Scroll Effect
+    window.addEventListener('scroll', () => {
+      document.getElementById('header').classList.toggle('scrolled', window.scrollY > 100);
+    });
+
+    // Scroll Animations
+    const sections = document.querySelectorAll('.section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1 });
+
+    sections.forEach(sec => observer.observe(sec));
+
+    // Stats Counter
+    const counters = document.querySelectorAll('[data-count]');
+    const speed = 200;
+    const observerStats = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting) {
+        counters.forEach(counter => {
+          const updateCount = () => {
+            const target = +counter.getAttribute('data-count');
+            const count = +counter.innerText;
+            const inc = target / speed;
+            if (count < target) {
+              counter.innerText = Math.ceil(count + inc);
+              setTimeout(updateCount, 10);
+            } else counter.innerText = target + (target === 100 ? '%' : '');
+          };
+          updateCount();
+        });
+        observerStats.disconnect();
+      }
+    });
+    observerStats.observe(document.getElementById('stats'));
+
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const answer = btn.nextElementSibling;
+        const isOpen = answer.style.maxHeight;
+        document.querySelectorAll('.faq-answer').forEach(a => a.style.maxHeight = null);
+        document.querySelectorAll('.faq-question span').forEach(s => s.textContent = '+');
+        if (!isOpen) {
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+          btn.querySelector('span').textContent = '−';
+        }
+      });
+    });
+
+    // Back to Top
+    const backToTop = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      backToTop.classList.toggle('visible', window.scrollY > 500);
+    });
+    backToTop.addEventListener('click', () => window.scrollTo({ top:0, behavior:'smooth' }));
+  </script>
+
 </body>
 </html>
