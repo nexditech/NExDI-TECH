@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Log in to your NExDI Tech account – access internships, training resources, projects and digital innovation tools."/>
+  <title>Log In – NExDI Tech | New Era Digital Innovation</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #0d6efd;
+      --primary-dark: #0b5ed7;
+      --accent: #00d084;
+      --dark: #0f172a;
+      --gray: #64748b;
+      --light: #f8fafc;
+      --border: #e2e8f0;
+      --transition: all 0.4s ease;
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      line-height: 1.7;
+      color: var(--dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.65)), url('https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') center/cover no-repeat fixed;
+      background-attachment: fixed;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 0;
+      background: var(--primary);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      z-index: 9999;
+      transition: top 0.3s;
+    }
+    .skip-link:focus { top: 0; }
+
+    header {
+        background:linear-gradient(135deg, var(--dark) 0%, #1e293b 100%);
+      color:white;
+      padding:1.2rem 5%;
+      position:fixed;
+      width:100%;
+      top:0;
+      z-index:2000;
+      box-shadow:0 4px 25px rgba(0,0,0,0.3);
+      transition:var(--transition);
+    }
+
+    nav {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 1.25rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-links { display:flex; gap:2rem; list-style:none; margin:0; }
+    .nav-links a { color:white; text-decoration:none; font-weight:600; font-size:1.1rem; padding:0.8rem 1.2rem; border-radius:50px; transition:var(--transition); }
+    .nav-links a:hover, .nav-links a.active { background:rgba(255,255,255,0.15); }
+
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    .logo-img {
+      height: 60px;
+      width: auto;
+      max-width: 180px;
+      object-fit: contain;
+    }
+
+    .logo-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 140px 5% 80px;
+    }
+
+    .login-box {
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(12px);
+      padding: 3rem 2.5rem;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+      max-width: 480px;
+      width: 100%;
+      text-align: center;
+      border: 1px solid rgba(13,110,253,0.15);
+    }
+
+    .login-box h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 0.8rem;
+      color: var(--dark);
+    }
+
+    .login-box .tagline {
+      font-size: 1.3rem;
+      font-style: italic;
+      color: var(--primary);
+      margin-bottom: 2rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.8rem;
+      text-align: left;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.6rem;
+      font-weight: 500;
+      color: var(--dark);
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 0.95rem 1.3rem;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font-size: 1rem;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .form-group input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(13,110,253,0.15);
+      outline: none;
+    }
+
+    .form-options {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 1rem 0 2rem;
+      font-size: 0.95rem;
+    }
+
+    .form-options a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .form-options a:hover { text-decoration: underline; }
+
+    .btn-login {
+      background: var(--primary);
+      color: white;
+      padding: 1rem 2.5rem;
+      border: none;
+      border-radius: 10px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      width: 100%;
+      font-size: 1.1rem;
+    }
+
+    .btn-login:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .signup-link {
+      margin-top: 2rem;
+      font-size: 1rem;
+      color: var(--gray);
+    }
+
+    .signup-link a {
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .signup-link a:hover { text-decoration: underline; }
+
+    .security-note {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: var(--gray);
+      text-align: center;
+    }
+
+    footer {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 3rem 5% 2rem;
+      margin-top: auto;
+    }
+
+    @media (max-width: 768px) {
+      main { padding: 120px 5% 60px; }
+      .login-box { padding: 2.5rem 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header with logo -->
+  <header>
+    <nav>
+      <div class="logo-container">
+        <img src="logo.png" alt="NExDI Tech company logo" class="logo-img" onerror="this.style.display='none';">
+        <h1 class="logo-text"></h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about us.html">About</a>
+        <a href="service.html">Services</a>
+        <a href="apply-internship.html">Internships</a>
+        <a href="contact us.html">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <div class="login-box">
+      <h1>Welcome Back</h1>
+      <p class="tagline">Advancing minds today for the innovations of tomorrow</p>
+      <p>Sign in to access your NExDI Tech dashboard, internships, training resources, and projects.</p>
+
+      <form>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required placeholder="your.email@example.com" autocomplete="email">
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required placeholder="••••••••" autocomplete="current-password">
+        </div>
+
+        <div class="form-options">
+          <label><input type="checkbox" name="remember"> Remember me</label>
+          <a href="#">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="btn-login">Log In</button>
+      </form>
+
+      <p class="signup-link">
+        Don't have an account? <a href="signup.html">Create one now</a>
+      </p>
+
+      <p class="security-note">
+        Your connection is secure. We use industry-standard encryption to protect your data.
+      </p>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>© 2026 NExDI Tech – New Era Digital Innovation<br>
+    123 Polo High Court, Ibadan, Oyo State, Nigeria<br>
+    +234 701 064 6417 | info@nexditech.com</p>
+  </footer>
+
+</body>
+</html>

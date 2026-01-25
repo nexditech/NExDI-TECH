@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Sign up for NExDI Tech – create your account to access internships, training programs, projects, and digital innovation resources in Ibadan, Nigeria."/>
+  <title>Sign Up – NExDI Tech | New Era Digital Innovation</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #0d6efd;
+      --primary-dark: #0b5ed7;
+      --accent: #00d084;
+      --dark: #0f172a;
+      --gray: #64748b;
+      --light: #f8fafc;
+      --border: #e2e8f0;
+      --transition: all 0.4s ease;
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      line-height: 1.7;
+      color: var(--dark);
+      background: linear-gradient(135deg, #f0f7ff 0%, #e6fff5 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 0;
+      background: var(--primary);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      z-index: 9999;
+      transition: top 0.3s;
+    }
+    .skip-link:focus { top: 0; }
+
+    header {
+      background:linear-gradient(135deg, var(--dark) 0%, #1e293b 100%);
+      color:white;
+      padding:1.2rem 5%;
+      position:fixed;
+      width:100%;
+      top:0;
+      z-index:2000;
+      box-shadow:0 4px 25px rgba(0,0,0,0.3);
+      transition:var(--transition);
+    }
+
+    nav {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 1.25rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-links { display:flex; gap:2rem; list-style:none; margin:0; }
+    .nav-links a { color:white; text-decoration:none; font-weight:600; font-size:1.1rem; padding:0.8rem 1.2rem; border-radius:50px; transition:var(--transition); }
+    .nav-links a:hover, .nav-links a.active { background:rgba(255,255,255,0.15); }
+
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    .logo-img {
+      height: 60px;
+      width: auto;
+      max-width: 180px;
+      object-fit: contain;
+    }
+
+    .logo-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 140px 5% 80px;
+    }
+
+    .signup-container {
+      background: white;
+      padding: 3rem 2.5rem;
+      border-radius: 16px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+      max-width: 500px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .signup-container h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 0.8rem;
+      color: var(--dark);
+    }
+
+    .signup-container .slogan {
+      font-size: 1.3rem;
+      font-style: italic;
+      color: var(--primary);
+      margin-bottom: 2rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.8rem;
+      text-align: left;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.6rem;
+      font-weight: 500;
+      color: var(--dark);
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 0.9rem 1.2rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.3s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      border-color: var(--primary);
+      outline: none;
+    }
+
+    .btn {
+      background: var(--primary);
+      color: white;
+      padding: 1rem 2.5rem;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      width: 100%;
+      font-size: 1.1rem;
+    }
+
+    .btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .login-link {
+      margin-top: 2rem;
+      font-size: 1rem;
+      color: var(--gray);
+    }
+
+    .login-link a {
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .login-link a:hover { text-decoration: underline; }
+
+    .security-note {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: var(--gray);
+    }
+
+    footer {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 3rem 5% 2rem;
+      margin-top: auto;
+    }
+
+    @media (max-width: 768px) {
+      main { padding: 120px 5% 60px; }
+      .signup-container { padding: 2.5rem 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header with logo -->
+  <header>
+    <nav>
+      <div class="logo-container">
+        <img src="logo.png" alt="NExDI Tech company logo" class="logo-img" onerror="this.style.display='none';">
+        <h1 class="logo-text"></h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about us.html">About</a>
+        <a href="service.html">Services</a>
+        <a href="apply-internship.html">Internships</a>
+        <a href="contact us.html">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <div class="signup-container">
+      <h1>Create Your Account</h1>
+      <p class="slogan">Advancing minds today for the innovations of tomorrow</p>
+      <p>Join NExDI Tech and unlock hands-on experience in AI, robotics, software development, digital training, and more.</p>
+
+      <form action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="7899a8eb-b8c4-49f6-a828-34c796b11587">
+        <input type="hidden" name="subject" value="New User Signup – NExDI Tech Website">
+
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" name="full_name" required placeholder="Your full name">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+        </div>
+
+        <div class="form-group">
+          <label for="password">Create Password</label>
+          <input type="password" id="password" name="password" required placeholder="At least 8 characters">
+        </div>
+
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <input type="password" id="confirmPassword" name="confirm_password" required placeholder="Re-enter password">
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number (optional)</label>
+          <input type="tel" id="phone" name="phone" placeholder="+234 701 064 6417">
+        </div>
+
+        <div class="form-group">
+          <label for="track">Interested In (optional)</label>
+          <select id="track" name="interested_track">
+            <option value="">Select area of interest</option>
+            <option value="AI & Machine Learning">AI & Machine Learning</option>
+            <option value="Software & Web Development">Software & Web Development</option>
+            <option value="Robotics & Hardware Engineering">Robotics & Hardware Engineering</option>
+            <option value="Digital Marketing & Content Creation">Digital Marketing & Content Creation</option>
+            <option value="Cybersecurity & Data Analysis">Cybersecurity & Data Analysis</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn">Create Account</button>
+      </form>
+
+      <p class="login-link">
+        Already have an account? <a href="login.html">Log in</a>
+      </p>
+
+      <p class="security-note">
+        Your information is secure with NExDI Tech. We never share your data without consent.
+      </p>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>© 2026 NExDI Tech – New Era Digital Innovation<br>
+    123 Polo High Court, Ibadan, Oyo State, Nigeria<br>
+    +234 701 064 6417 | info@nexditech.com</p>
+  </footer>
+
+</body>
+</html>
