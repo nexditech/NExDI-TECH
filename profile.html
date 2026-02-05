@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="NExDI Tech Dashboard – Your personal hub for internships, training, projects, and digital innovation progress."/>
-  <title>Dashboard – NExDI Tech</title>
+  <meta name="description" content="NExDI Tech Profile – Manage your account, update info, view progress, and settings."/>
+  <title>My Profile – NExDI Tech</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -126,19 +126,54 @@
       transition: margin-left 0.3s ease;
     }
 
-    .welcome {
+    .profile-header {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
       margin-bottom: 3rem;
+      flex-wrap: wrap;
     }
 
-    .welcome h1 {
+    .profile-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: var(--gray);
+      background-size: cover;
+      background-position: center;
+      border: 4px solid white;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .profile-info h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 2.8rem;
+      font-size: 2.5rem;
       margin-bottom: 0.5rem;
     }
 
-    .stats-grid {
+    .profile-info p {
+      color: var(--gray);
+      font-size: 1.1rem;
+    }
+
+    .edit-btn {
+      background: var(--primary);
+      color: white;
+      padding: 0.6rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .edit-btn:hover {
+      background: var(--primary-dark);
+    }
+
+    .profile-stats {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 1.5rem;
       margin-bottom: 3rem;
     }
@@ -152,7 +187,7 @@
     }
 
     .stat-number {
-      font-size: 2.5rem;
+      font-size: 2.2rem;
       font-weight: 700;
       color: var(--primary);
       margin-bottom: 0.5rem;
@@ -163,24 +198,54 @@
       font-size: 1rem;
     }
 
-    .activity-feed {
+    .profile-form {
       background: white;
-      padding: 2rem;
+      padding: 2.5rem;
       border-radius: 16px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+      margin-bottom: 3rem;
     }
 
-    .activity-item {
-      padding: 1.2rem 0;
-      border-bottom: 1px solid var(--border);
+    .profile-form h2 {
+      margin-bottom: 2rem;
     }
 
-    .activity-item:last-child { border-bottom: none; }
+    .form-group {
+      margin-bottom: 1.8rem;
+    }
 
-    .activity-date {
-      color: var(--gray);
-      font-size: 0.9rem;
-      margin-bottom: 0.3rem;
+    label {
+      display: block;
+      margin-bottom: 0.6rem;
+      font-weight: 500;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.9rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .save-btn {
+      background: var(--primary);
+      color: white;
+      padding: 1rem 2.5rem;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .save-btn:hover {
+      background: var(--primary-dark);
     }
 
     footer {
@@ -205,7 +270,10 @@
       .main-content {
         margin-left: 0;
       }
-      .welcome h1 { font-size: 2.2rem; }
+      .profile-header {
+        flex-direction: column;
+        text-align: center;
+      }
     }
   </style>
 </head>
@@ -235,23 +303,28 @@
   <!-- Sidebar -->
   <aside class="sidebar" id="sidebar">
     <ul>
-      <li><a href="dashboard.html" class="active">Dashboard</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="profile.html" class="active">Profile & Settings</a></li>
       <li><a href="my-internships.html">My Internships</a></li>
       <li><a href="training-courses.html">Training Courses</a></li>
       <li><a href="projects.html">My Projects</a></li>
-      <li><a href="profile.html">Profile & Settings</a></li>
       <li><a href="logout.html">Logout</a></li>
     </ul>
   </aside>
 
   <main id="main-content">
 
-    <section class="welcome">
-      <h1>Welcome back, Ndara!</h1>
-      <p style="color:var(--gray);">Here's what's happening in your NExDI Tech account.</p>
+    <section class="profile-header">
+      <div class="profile-photo" style="background-image: url('https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
+      <div class="profile-info">
+        <h1>Ndara</h1>
+        <p>Ibadan, Nigeria • Software Developer & Robotics Enthusiast</p>
+        <p style="color:var(--gray);">Member since January 2025</p>
+        <button class="edit-btn">Edit Profile</button>
+      </div>
     </section>
 
-    <section class="stats-grid">
+    <section class="profile-stats">
       <div class="stat-card">
         <div class="stat-number">3</div>
         <div class="stat-label">Active Internships</div>
@@ -262,33 +335,49 @@
       </div>
       <div class="stat-card">
         <div class="stat-number">12</div>
-        <div class="stat-label">Projects Submitted</div>
+        <div class="stat-label">Projects Completed</div>
       </div>
       <div class="stat-card">
         <div class="stat-number">92%</div>
-        <div class="stat-label">Attendance Rate</div>
+        <div class="stat-label">Completion Rate</div>
       </div>
     </section>
 
-    <section class="activity-feed">
-      <h2>Recent Activity</h2>
-      <div class="activity-item">
-        <div class="activity-date">February 5, 2026 – 10:45 AM</div>
-        <p><strong>Completed Module:</strong> Introduction to Machine Learning</p>
-      </div>
-      <div class="activity-item">
-        <div class="activity-date">February 4, 2026 – 3:20 PM</div>
-        <p><strong>Submitted Project:</strong> Robotics Arm Prototype</p>
-      </div>
-      <div class="activity-item">
-        <div class="activity-date">February 3, 2026 – 11:10 AM</div>
-        <p><strong>Joined New Internship:</strong> AI Software Development Team</p>
-      </div>
+    <section class="profile-form">
+      <h2>Personal Information</h2>
+      <form>
+        <div class="form-group">
+          <label for="full-name">Full Name</label>
+          <input type="text" id="full-name" value="Ndara" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" value="ndara@nexditech.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" value="+234 701 064 6417">
+        </div>
+
+        <div class="form-group">
+          <label for="bio">Bio / About Me</label>
+          <textarea id="bio" rows="4">Passionate about AI, robotics, and empowering young talents in Nigeria. Currently exploring machine learning and automation projects at NExDI Tech.</textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="location">Location</label>
+          <input type="text" id="location" value="Ibadan, Oyo State, Nigeria">
+        </div>
+
+        <button type="submit" class="save-btn">Save Changes</button>
+      </form>
     </section>
 
     <section style="text-align:center; margin:4rem 0;">
-      <a href="training-courses.html" style="background:var(--primary); color:white; padding:1rem 2.5rem; border-radius:8px; text-decoration:none; font-weight:600; margin:0 1rem;">Continue Learning</a>
-      <a href="apply-internship.html" style="background:var(--accent); color:var(--dark); padding:1rem 2.5rem; border-radius:8px; text-decoration:none; font-weight:600; margin:0 1rem;">Apply for New Internship</a>
+      <a href="change-password.html" style="color:var(--primary); text-decoration:none; margin:0 1rem;">Change Password</a>
+      <a href="privacy-settings.html" style="color:var(--primary); text-decoration:none; margin:0 1rem;">Privacy & Security</a>
     </section>
 
   </main>
@@ -299,7 +388,7 @@
     +234 701 064 6417 | info@nexditech.com</p>
   </footer>
 
-  <!-- Mobile Menu / Sidebar Toggle Script -->
+  <!-- Sidebar Toggle Script -->
   <script>
     const hamburger = document.querySelector('.hamburger');
     const sidebar = document.getElementById('sidebar');

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="NExDI Tech Services – AI & software development, robotics & automation, digital skills training, tech consulting in Ibadan, Nigeria."/>
-  <title>Our Services – NExDI Tech | Digital Innovation Company</title>
+  <meta name="description" content="NExDI Tech Digital Skills Training – Bootcamps, certifications, coding, cybersecurity, data science, AI courses in Ibadan, Nigeria."/>
+  <title>Digital Skills Training – NExDI Tech | Ibadan</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -179,13 +179,13 @@
       margin-bottom: 3rem;
     }
 
-    .services-grid {
+    .programs-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 2.5rem;
     }
 
-    .service-card {
+    .program-card {
       background: white;
       border-radius: 16px;
       overflow: hidden;
@@ -193,33 +193,33 @@
       transition: var(--transition);
     }
 
-    .service-card:hover {
+    .program-card:hover {
       transform: translateY(-12px);
       box-shadow: 0 20px 50px rgba(13,110,253,0.15);
     }
 
-    .service-image {
-      height: 240px;
+    .program-image {
+      height: 220px;
       background-size: cover;
       background-position: center;
     }
 
-    .service-content {
+    .program-content {
       padding: 2rem;
     }
 
-    .service-content h3 {
+    .program-content h3 {
       color: var(--primary);
       margin-bottom: 1rem;
       font-size: 1.5rem;
     }
 
-    .service-content p {
+    .program-content p {
       color: var(--gray);
       margin-bottom: 1.5rem;
     }
 
-    .service-details {
+    .program-details {
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.5s ease, padding 0.3s ease;
@@ -227,7 +227,7 @@
       padding: 0 2rem;
     }
 
-    .service-card.active .service-details {
+    .program-card.active .program-details {
       max-height: 800px;
       padding: 2rem;
     }
@@ -238,8 +238,6 @@
       background: linear-gradient(135deg, var(--primary), var(--accent));
       color: white;
     }
-
-    .cta h2 { color: white; margin-bottom: 1.5rem; }
 
     footer {
       background: var(--dark);
@@ -252,13 +250,8 @@
       .hamburger { display: block; }
       .nav-links { display: none; }
       .hero { padding: 120px 5% 80px; }
-      .services-grid { grid-template-columns: 1fr; }
-      .service-image { height: 200px; }
-    }
-
-    @media (max-width: 600px) {
-      .section { padding: 60px 5%; }
-      .service-content { padding: 1.5rem; }
+      .programs-grid { grid-template-columns: 1fr; }
+      .program-image { height: 200px; }
     }
   </style>
 </head>
@@ -270,7 +263,7 @@
     <nav>
       <div class="logo-container">
         <img src="logo.png" alt="NExDI Tech company logo" class="logo-img" onerror="this.style.display='none';">
-        <h1 class="logo-text"></h1>
+        <h1 class="logo-text">NExDI Tech</h1>
       </div>
 
       <div class="nav-links">
@@ -302,60 +295,77 @@
   <main id="main-content">
 
     <section class="hero">
-      <h1>Our Services</h1>
-      <p class="lead">Transforming ideas into reality with cutting-edge technology and practical training.</p>
+      <h1>Digital Skills Training</h1>
+      <p class="lead">Practical, hands-on programs to equip you with in-demand digital skills for the future.</p>
     </section>
 
-    <section class="section" id="services" style="background:var(--light);">
-      <h2>Our Core Services</h2>
-      <div class="services-grid">
-        <!-- AI & Software Development -->
-        <a href="ai-software.html" class="service-card" aria-label="Go to AI and Software Development services">
-          <div class="service-image" style="background-image: url('https://images.pexels.com/photos/17483873/pexels-photo-17483873/free-photo-of-an-artist-s-illustration-of-artificial-intelligence-ai-this-image-was-inspired-neural-networks-used-in-deep-learning-it-was-created-by-novoto-studio-as-part-of-the-visualising-ai-proje.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
-          <div class="service-overlay"></div>
-          <div class="card-content">
-            <h3>AI & Software Development</h3>
-            <p>Custom apps, web/mobile solutions, machine learning integration</p>
+    <section class="section">
+      <div class="programs-grid">
+        <div class="program-card">
+          <div class="program-image" style="background-image: url('https://images.pexels.com/photos/4144923/pexels-photo-4144923.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
+          <div class="program-content">
+            <h3>Web & Mobile Development Bootcamp</h3>
+            <p>Learn to build modern websites and mobile apps from scratch.</p>
+            <div class="program-details">
+              <p>Duration: 3–6 months (part-time/full-time options)<br>
+              Technologies: HTML, CSS, JavaScript, React, Flutter, Node.js<br>
+              Outcome: Build portfolio projects, earn certificate</p>
+            </div>
+            <button onclick="this.parentElement.parentElement.classList.toggle('active')">Learn More</button>
           </div>
-        </a>
-    
-        <!-- Robotics & Automation -->
-        <a href="robotics.html" class="service-card" aria-label="Go to Robotics and Automation services">
-          <div class="service-image" style="background-image: url('https://images.pexels.com/photos/2599244/pexels-photo-2599244.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
-          <div class="service-overlay"></div>
-          <div class="card-content">
-            <h3>Robotics & Automation</h3>
-            <p>Hardware prototyping, lab setups, robotic services</p>
+        </div>
+
+        <div class="program-card">
+          <div class="program-image" style="background-image: url('https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
+          <div class="program-content">
+            <h3>Cybersecurity & Ethical Hacking</h3>
+            <p>Master digital security, penetration testing, and protection techniques.</p>
+            <div class="program-details">
+              <p>Duration: 3 months<br>
+              Topics: Network security, ethical hacking, cryptography, incident response<br>
+              Outcome: CompTIA Security+ prep + practical labs</p>
+            </div>
+            <button onclick="this.parentElement.parentElement.classList.toggle('active')">Learn More</button>
           </div>
-        </a>
-    
-        <!-- Digital Skills Training -->
-        <a href="digital-training.html" class="service-card" aria-label="Go to Digital Skills Training services">
-          <div class="service-image" style="background-image: url('https://images.pexels.com/photos/4144923/pexels-photo-4144923.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
-          <div class="service-overlay"></div>
-          <div class="card-content">
-            <h3>Digital Skills Training</h3>
-            <p>Bootcamps, certifications in coding, cybersecurity, data</p>
+        </div>
+
+        <div class="program-card">
+          <div class="program-image" style="background-image: url('https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
+          <div class="program-content">
+            <h3>Data Science & Analysis</h3>
+            <p>Learn to collect, analyze, and visualize data to drive decisions.</p>
+            <div class="program-details">
+              <p>Duration: 4 months<br>
+              Tools: Python, Pandas, SQL, Power BI, Tableau<br>
+              Outcome: Real-world data projects + certificate</p>
+            </div>
+            <button onclick="this.parentElement.parentElement.classList.toggle('active')">Learn More</button>
           </div>
-        </a>
-    
-        <!-- Tech Consulting & Setups -->
-        <a href="tech-consulting.html" class="service-card" aria-label="Go to Tech Consulting and Setups services">
-          <div class="service-image" style="background-image: url('https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
-          <div class="service-overlay"></div>
-          <div class="card-content">
-            <h3>Tech Consulting & Setups</h3>
-            <p>Business digital transformation, innovation labs</p>
+        </div>
+
+        <div class="program-card">
+          <div class="program-image" style="background-image: url('https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
+          <div class="program-content">
+            <h3>AI & Machine Learning Fundamentals</h3>
+            <p>Introduction to AI, machine learning, and building intelligent systems.</p>
+            <div class="program-details">
+              <p>Duration: 3 months<br>
+              Topics: Python for AI, TensorFlow basics, neural networks<br>
+              Outcome: Build simple AI models + certificate</p>
+            </div>
+            <button onclick="this.parentElement.parentElement.classList.toggle('active')">Learn More</button>
           </div>
-        </a>
+        </div>
       </div>
     </section>
+
     <section class="section" style="text-align:center; background:linear-gradient(135deg, var(--primary), var(--accent)); color:white;">
-      <h2>Ready to Get Started?</h2>
+      <h2>Ready to Skill Up?</h2>
       <p style="font-size:1.3rem; max-width:700px; margin:0 auto 2.5rem;">
-        Let's discuss how our services can solve your challenges or power your next big idea.
+        Join thousands of young Nigerians transforming their careers with NExDI Tech training.
       </p>
-      <a href="contact us.html" style="background:white; color:var(--primary); padding:1rem 2.5rem; border-radius:8px; text-decoration:none; font-weight:600; box-shadow:0 4px 15px rgba(0,0,0,0.2);">Contact Us Today</a>
+      <a href="apply-internship.html" style="background:white; color:var(--primary); padding:1rem 2.5rem; border-radius:8px; text-decoration:none; font-weight:600; box-shadow:0 4px 15px rgba(0,0,0,0.2); margin:0 1rem;">Apply Now</a>
+      <a href="contact us.html" style="background:transparent; color:white; border:2px solid white; padding:1rem 2.5rem; border-radius:8px; text-decoration:none; font-weight:600;">Ask Questions</a>
     </section>
 
   </main>
@@ -366,6 +376,7 @@
     +234 701 064 6417 | info@nexditech.com</p>
   </footer>
 
+  <!-- Mobile Menu Script -->
   <script>
     const hamburger = document.querySelector('.hamburger');
     const mobileMenu = document.getElementById('mobileMenu');

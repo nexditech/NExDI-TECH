@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Sign up for NExDI Tech – create your account to access internships, training programs, projects, and digital innovation resources in Ibadan, Nigeria."/>
-  <title>Sign Up – NExDI Tech | New Era Digital Innovation</title>
+  <meta name="description" content="Sign up for NExDI Tech – Create your account to access internships, training, projects, and digital innovation opportunities in Ibadan, Nigeria."/>
+  <title>Sign Up – NExDI Tech | Digital Innovation Company</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,10 +28,7 @@
       font-family: 'Inter', system-ui, sans-serif;
       line-height: 1.7;
       color: var(--dark);
-      background: linear-gradient(135deg, #f0f7ff 0%, #e6fff5 100%);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+      background: #f8fafc;
     }
 
     .skip-link {
@@ -47,15 +44,12 @@
     .skip-link:focus { top: 0; }
 
     header {
-      background:linear-gradient(135deg, var(--dark) 0%, #1e293b 100%);
-      color:white;
-      padding:1.2rem 5%;
-      position:fixed;
-      width:100%;
-      top:0;
-      z-index:2000;
-      box-shadow:0 4px 25px rgba(0,0,0,0.3);
-      transition:var(--transition);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: black;
+      border-bottom: 1px solid var(--border);
+      z-index: 1000;
     }
 
     nav {
@@ -66,10 +60,6 @@
       justify-content: space-between;
       align-items: center;
     }
-    .nav-links { display:flex; gap:2rem; list-style:none; margin:0; }
-    .nav-links a { color:white; text-decoration:none; font-weight:600; font-size:1.1rem; padding:0.8rem 1.2rem; border-radius:50px; transition:var(--transition); }
-    .nav-links a:hover, .nav-links a.active { background:rgba(255,255,255,0.15); }
-
 
     .logo-container {
       display: flex;
@@ -92,102 +82,162 @@
       text-decoration: none;
     }
 
-    main {
-      flex: 1;
+    .nav-links {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 140px 5% 80px;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--gray);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover { color: var(--primary); }
+
+    .hamburger {
+      display: none;
+      font-size: 2.2rem;
+      background: none;
+      border: none;
+      color: var(--dark);
+      cursor: pointer;
+      z-index: 3000;
+    }
+
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s;
+      z-index: 2500;
+    }
+
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 80%;
+      max-width: 320px;
+      height: 100%;
+      background: white;
+      padding: 6rem 2rem 2rem;
+      transition: right 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      z-index: 3000;
+      box-shadow: -10px 0 30px rgba(0,0,0,0.2);
+    }
+
+    .mobile-menu.active { right: 0; }
+
+    .mobile-menu a {
+      display: block;
+      color: var(--dark);
+      text-decoration: none;
+      font-size: 1.4rem;
+      margin: 1.5rem 0;
+      padding: 1rem;
+      border-radius: 8px;
+      transition: var(--transition);
+    }
+
+    .mobile-menu a:hover { background: var(--light); }
+
+    main { 
+      padding-top: 100px; 
+      min-height: calc(100vh - 200px); 
+      display: flex; 
+      align-items: center; 
     }
 
     .signup-container {
+      max-width: 480px;
+      width: 90%;
+      margin: 0 auto 4rem;
       background: white;
       padding: 3rem 2.5rem;
       border-radius: 16px;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.12);
-      max-width: 500px;
-      width: 100%;
-      text-align: center;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
     }
 
-    .signup-container h1 {
+    h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-      margin-bottom: 0.8rem;
+      font-size: 2.8rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
       color: var(--dark);
-    }
-
-    .signup-container .slogan {
-      font-size: 1.3rem;
-      font-style: italic;
-      color: var(--primary);
-      margin-bottom: 2rem;
     }
 
     .form-group {
       margin-bottom: 1.8rem;
-      text-align: left;
     }
 
-    .form-group label {
+    label {
       display: block;
       margin-bottom: 0.6rem;
       font-weight: 500;
-      color: var(--dark);
+      font-size: 1rem;
     }
 
-    .form-group input,
-    .form-group select {
+    input {
       width: 100%;
-      padding: 0.9rem 1.2rem;
+      padding: 0.9rem;
       border: 1px solid var(--border);
       border-radius: 8px;
       font-size: 1rem;
-      transition: border-color 0.3s;
     }
 
-    .form-group input:focus,
-    .form-group select:focus {
-      border-color: var(--primary);
-      outline: none;
+    .terms {
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+      color: var(--gray);
     }
 
-    .btn {
+    .terms a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .terms a:hover { text-decoration: underline; }
+
+    .btn-signup {
       background: var(--primary);
       color: white;
-      padding: 1rem 2.5rem;
+      padding: 1rem;
       border: none;
       border-radius: 8px;
       font-weight: 600;
       cursor: pointer;
-      transition: var(--transition);
       width: 100%;
-      font-size: 1.1rem;
+      transition: var(--transition);
     }
 
-    .btn:hover {
+    .btn-signup:hover {
       background: var(--primary-dark);
-      transform: translateY(-2px);
     }
 
     .login-link {
+      text-align: center;
       margin-top: 2rem;
-      font-size: 1rem;
       color: var(--gray);
     }
 
     .login-link a {
       color: var(--primary);
-      font-weight: 600;
       text-decoration: none;
+      font-weight: 600;
     }
 
-    .login-link a:hover { text-decoration: underline; }
-
-    .security-note {
+    .form-success {
+      background: #e6fff5;
+      color: #006644;
+      padding: 1.5rem;
+      border-radius: 12px;
       margin-top: 2rem;
-      font-size: 0.9rem;
-      color: var(--gray);
+      text-align: center;
+      display: none;
     }
 
     footer {
@@ -195,12 +245,13 @@
       color: white;
       text-align: center;
       padding: 3rem 5% 2rem;
-      margin-top: auto;
+      margin-top: 4rem;
     }
 
-    @media (max-width: 768px) {
-      main { padding: 120px 5% 60px; }
-      .signup-container { padding: 2.5rem 1.8rem; }
+    @media (max-width: 900px) {
+      .hamburger { display: block; }
+      .nav-links { display: none; }
+      .signup-container { padding: 2.5rem 2rem; }
     }
   </style>
 </head>
@@ -208,7 +259,6 @@
 
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- Header with logo -->
   <header>
     <nav>
       <div class="logo-container">
@@ -222,69 +272,81 @@
         <a href="service.html">Services</a>
         <a href="apply-internship.html">Internships</a>
         <a href="contact us.html">Contact</a>
+        <a href="login.html">login</a>
+
       </div>
+
+      <button class="hamburger" aria-label="Toggle navigation menu">&#9776;</button>
     </nav>
   </header>
 
+  <div class="overlay" id="overlay"></div>
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="hamburger" style="position:absolute; top:1.5rem; right:1.5rem;" aria-label="Close menu">&times;</button>
+    <a href="index.html">Home</a>
+    <a href="about us.html">About</a>
+    <a href="service.html">Services</a>
+    <a href="apply-internship.html">Internships</a>
+    <a href="contact us.html">Contact</a>
+    <a href="login.html">login</a>
+
+  </div>
+
   <main id="main-content">
 
-    <div class="signup-container">
+    <section class="hero">
       <h1>Create Your Account</h1>
-      <p class="slogan">Advancing minds today for the innovations of tomorrow</p>
-      <p>Join NExDI Tech and unlock hands-on experience in AI, robotics, software development, digital training, and more.</p>
+      <p class="lead">Join NExDI Tech to access internships, training, projects, and the digital innovation community.</p>
+    </section>
 
-      <form action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="7899a8eb-b8c4-49f6-a828-34c796b11587">
-        <input type="hidden" name="subject" value="New User Signup – NExDI Tech Website">
+    <section class="section">
+      <div class="signup-container">
+        <form id="signup-form">
+          <div class="form-group">
+            <label for="full-name">Full Name *</label>
+            <input type="text" id="full-name" name="full_name" required placeholder="Your full name">
+          </div>
 
-        <div class="form-group">
-          <label for="fullName">Full Name</label>
-          <input type="text" id="fullName" name="full_name" required placeholder="Your full name">
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password *</label>
+            <input type="password" id="password" name="password" required placeholder="Create a strong password">
+          </div>
+
+          <div class="form-group">
+            <label for="confirm-password">Confirm Password *</label>
+            <input type="password" id="confirm-password" name="confirm_password" required placeholder="Re-enter password">
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number (optional)</label>
+            <input type="tel" id="phone" name="phone" placeholder="+234 ...">
+          </div>
+
+          <div class="terms">
+            <label>
+              <input type="checkbox" name="terms" required>
+              I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+            </label>
+          </div>
+
+          <button type="submit" class="btn-signup">Sign Up</button>
+        </form>
+
+        <div class="form-success" id="success-message">
+          <h3>Account Created!</h3>
+          <p>Welcome to NExDI Tech! Check your email to verify your account and start exploring.</p>
         </div>
 
-        <div class="form-group">
-          <label for="email">Email Address</label>
-          <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+        <div class="login-link">
+          Already have an account? <a href="login.html">Login here</a>
         </div>
-
-        <div class="form-group">
-          <label for="password">Create Password</label>
-          <input type="password" id="password" name="password" required placeholder="At least 8 characters">
-        </div>
-
-        <div class="form-group">
-          <label for="confirmPassword">Confirm Password</label>
-          <input type="password" id="confirmPassword" name="confirm_password" required placeholder="Re-enter password">
-        </div>
-
-        <div class="form-group">
-          <label for="phone">Phone Number (optional)</label>
-          <input type="tel" id="phone" name="phone" placeholder="+234 701 064 6417">
-        </div>
-
-        <div class="form-group">
-          <label for="track">Interested In (optional)</label>
-          <select id="track" name="interested_track">
-            <option value="">Select area of interest</option>
-            <option value="AI & Machine Learning">AI & Machine Learning</option>
-            <option value="Software & Web Development">Software & Web Development</option>
-            <option value="Robotics & Hardware Engineering">Robotics & Hardware Engineering</option>
-            <option value="Digital Marketing & Content Creation">Digital Marketing & Content Creation</option>
-            <option value="Cybersecurity & Data Analysis">Cybersecurity & Data Analysis</option>
-          </select>
-        </div>
-
-        <button type="submit" class="btn">Create Account</button>
-      </form>
-
-      <p class="login-link">
-        Already have an account? <a href="login.html">Log in</a>
-      </p>
-
-      <p class="security-note">
-        Your information is secure with NExDI Tech. We never share your data without consent.
-      </p>
-    </div>
+      </div>
+    </section>
 
   </main>
 
@@ -293,6 +355,42 @@
     123 Polo High Court, Ibadan, Oyo State, Nigeria<br>
     +234 701 064 6417 | info@nexditech.com</p>
   </footer>
+
+  <!-- Mobile Menu Script -->
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const overlay = document.getElementById('overlay');
+    const closeBtn = mobileMenu.querySelector('.hamburger');
+
+    function toggleMenu() {
+      mobileMenu.classList.toggle('active');
+      overlay.style.opacity = mobileMenu.classList.contains('active') ? '1' : '0';
+      overlay.style.visibility = mobileMenu.classList.contains('active') ? 'visible' : 'hidden';
+    }
+
+    hamburger.addEventListener('click', toggleMenu);
+    closeBtn.addEventListener('click', toggleMenu);
+    overlay.addEventListener('click', toggleMenu);
+
+    // Simple client-side form validation & success message
+    document.getElementById('signup-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirm-password').value;
+
+      if (password !== confirmPassword) {
+        alert('Passwords do not match!');
+        return;
+      }
+
+      // Here you would normally send to backend (e.g. Web3Forms, Firebase, Supabase)
+      // For now, show success message
+      document.getElementById('success-message').style.display = 'block';
+      this.reset();
+    });
+  </script>
 
 </body>
 </html>

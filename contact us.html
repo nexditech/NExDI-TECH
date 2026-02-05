@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Contact NExDI Tech – Digital innovation company in Ibadan, Nigeria. Reach out for internships, services, partnerships, or inquiries."/>
+  <meta name="description" content="Contact NExDI Tech – Digital innovation company in Ibadan, Nigeria. Get in touch for internships, services, partnerships, or questions."/>
   <title>Contact Us – NExDI Tech | Ibadan, Nigeria</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,6 +31,7 @@
       background: #fff;
     }
 
+    /* Skip link */
     .skip-link {
       position: absolute;
       top: -100px;
@@ -96,6 +97,55 @@
 
     .nav-links a:hover { color: var(--primary); }
 
+    .hamburger {
+      display: none;
+      font-size: 2.2rem;
+      background: none;
+      border: none;
+      color: var(--dark);
+      cursor: pointer;
+      z-index: 3000;
+    }
+
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s;
+      z-index: 2500;
+    }
+
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 80%;
+      max-width: 320px;
+      height: 100%;
+      background: white;
+      padding: 6rem 2rem 2rem;
+      transition: right 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      z-index: 3000;
+      box-shadow: -10px 0 30px rgba(0,0,0,0.2);
+    }
+
+    .mobile-menu.active { right: 0; }
+
+    .mobile-menu a {
+      display: block;
+      color: var(--dark);
+      text-decoration: none;
+      font-size: 1.4rem;
+      margin: 1.5rem 0;
+      padding: 1rem;
+      border-radius: 8px;
+      transition: var(--transition);
+    }
+
+    .mobile-menu a:hover { background: var(--light); }
+
     main { padding-top: 100px; }
 
     .hero {
@@ -110,13 +160,11 @@
       margin-bottom: 1.5rem;
     }
 
-    .hero-image {
-      width: 100%;
-      max-height: 500px;
-      object-fit: cover;
-      border-radius: 16px;
-      margin: 3rem auto 0;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    .hero p.lead {
+      font-size: clamp(1.2rem, 4vw, 1.5rem);
+      max-width: 800px;
+      margin: 0 auto;
+      color: var(--gray);
     }
 
     .section {
@@ -135,79 +183,47 @@
     .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 4rem;
+      gap: 3rem;
     }
 
-    .contact-info {
-      display: flex;
-      flex-direction: column;
-      gap: 2.5rem;
+    .contact-info, .contact-form {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     }
 
-    .contact-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 1.5rem;
-    }
-
-    .contact-item i {
-      font-size: 2rem;
+    .contact-info h3 {
       color: var(--primary);
+      margin-bottom: 1.5rem;
     }
 
-    .contact-item div {
-      flex: 1;
+    .contact-info p, .contact-info a {
+      margin-bottom: 1.2rem;
+      display: block;
+      color: var(--gray);
     }
 
-    .contact-item h4 {
-      margin-bottom: 0.5rem;
-      color: var(--dark);
-    }
+    .contact-info a { color: var(--primary); text-decoration: none; }
 
-    .contact-item a {
-      color: var(--primary);
-      text-decoration: none;
-    }
-
-    .contact-item a:hover { text-decoration: underline; }
-
-    form {
-      margin-top: 3rem;
-    }
-
-    .form-group {
-      margin-bottom: 1.8rem;
-    }
-
-    .form-group label {
+    form label {
       display: block;
       margin-bottom: 0.5rem;
       font-weight: 500;
-      color: var(--dark);
     }
 
-    .form-group input,
-    .form-group textarea {
+    form input, form textarea {
       width: 100%;
-      padding: 0.9rem 1.2rem;
+      padding: 0.9rem;
+      margin-bottom: 1.2rem;
       border: 1px solid var(--border);
       border-radius: 8px;
       font-size: 1rem;
-      transition: border-color 0.3s;
     }
 
-    .form-group input:focus,
-    .form-group textarea:focus {
-      border-color: var(--primary);
-      outline: none;
-    }
+    form textarea { min-height: 150px; resize: vertical; }
 
-    .form-group textarea {
-      min-height: 160px;
-      resize: vertical;
-    }
-
-    .btn {
+    form button {
       background: var(--primary);
       color: white;
       padding: 1rem 2.5rem;
@@ -218,16 +234,19 @@
       transition: var(--transition);
     }
 
-    .btn:hover {
-      background: var(--primary-dark);
-      transform: translateY(-2px);
-    }
+    form button:hover { background: var(--primary-dark); }
 
     .map-container {
+      margin-top: 3rem;
       border-radius: 16px;
       overflow: hidden;
       box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      height: 450px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 400px;
+      border: 0;
     }
 
     footer {
@@ -238,18 +257,18 @@
     }
 
     @media (max-width: 900px) {
+      .hamburger { display: block; }
+      .nav-links { display: none; }
       .contact-grid { grid-template-columns: 1fr; }
       .hero { padding: 120px 5% 80px; }
-      .map-container { height: 350px; }
+      iframe { height: 300px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Skip link -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- Header with logo -->
   <header>
     <nav>
       <div class="logo-container">
@@ -261,103 +280,83 @@
         <a href="index.html">Home</a>
         <a href="about us.html">About</a>
         <a href="service.html">Services</a>
-        <a href="internship.html">Internships</a>
+        <a href="apply-internship.html">Internships</a>
         <a href="contact us.html">Contact</a>
+        <a href="login.html">login</a>
+
       </div>
+
+      <button class="hamburger" aria-label="Toggle navigation menu">&#9776;</button>
     </nav>
   </header>
 
+  <div class="overlay" id="overlay"></div>
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="hamburger" style="position:absolute; top:1.5rem; right:1.5rem;" aria-label="Close menu">&times;</button>
+    <a href="index.html">Home</a>
+    <a href="about us.html">About</a>
+    <a href="service.html">Services</a>
+    <a href="apply-internship.html">Internships</a>
+    <a href="contact us.html">Contact</a>
+    <a href="login.html">login</a>
+
+  </div>
+
   <main id="main-content">
 
-    <!-- Hero -->
     <section class="hero">
       <h1>Contact Us</h1>
       <p class="lead">We're here to help. Reach out for internships, partnerships, services, or any questions.</p>
-      <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Modern tech team collaborating in office" class="hero-image">
     </section>
 
-    <!-- Contact Section -->
     <section class="section">
       <div class="contact-grid">
-        <!-- Contact Info + Form -->
-        <div>
+        <!-- Contact Info -->
+        <div class="contact-info">
           <h2>Get in Touch</h2>
+          <p><strong>Address:</strong><br>123 Polo High Court<br>Ibadan, Oyo State, Nigeria</p>
+          <p><strong>Phone:</strong><br><a href="tel:+2347010646417">+234 701 064 6417</a></p>
+          <p><strong>Email:</strong><br><a href="mailto:info@nexditech.com">info@nexditech.com</a></p>
+          <p><strong>Working Hours:</strong><br>Monday – Friday: 9:00 AM – 5:00 PM WAT</p>
+        </div>
 
-          <div class="contact-info">
-            <div class="contact-item">
-              <i class="fas fa-map-marker-alt"></i>
-              <div>
-                <h4>Address</h4>
-                <p>123 Polo High Court<br>Ibadan, Oyo State, Nigeria</p>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <i class="fas fa-phone-alt"></i>
-              <div>
-                <h4>Phone</h4>
-                <p><a href="tel:+2347010646417">+234 701 064 6417</a></p>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <i class="fas fa-envelope"></i>
-              <div>
-                <h4>Email</h4>
-                <p><a href="mailto:info@nexditech.com">info@nexditech.com</a></p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Contact Form -->
-          <form action="https://api.web3forms.com/submit" method="POST" style="margin-top: 3rem;">
+        <!-- Contact Form -->
+        <div class="contact-form">
+          <h2>Send a Message</h2>
+          <form action="https://api.web3forms.com/submit" method="POST">
             <input type="hidden" name="access_key" value="7899a8eb-b8c4-49f6-a828-34c796b11587">
-            <input type="hidden" name="subject" value="New Contact Message - NExDI Tech Website">
+            <input type="hidden" name="subject" value="New Contact Message - NExDI Tech">
 
-            <div class="form-group">
-              <label for="name">Full Name</label>
-              <input type="text" id="name" name="name" required placeholder="Your name">
-            </div>
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required placeholder="Your name">
 
-            <div class="form-group">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" name="email" required placeholder="your.email@example.com">
-            </div>
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required placeholder="your@email.com">
 
-            <div class="form-group">
-              <label for="phone">Phone Number</label>
-              <input type="tel" id="phone" name="phone" placeholder="+234 ...">
-            </div>
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="+234 ...">
 
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" required placeholder="How can we help you?"></textarea>
-            </div>
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" rows="6" required placeholder="How can we help you?"></textarea>
 
-            <button type="submit" class="btn">Send Message</button>
+            <button type="submit">Send Message</button>
           </form>
         </div>
+      </div>
 
-        <!-- Map + Image -->
-        <div>
-          <h2>Our Location</h2>
-          <div class="map-container">
-            <!-- Replace with your real Google Maps embed -->
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.5!2d3.896!3d7.377!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1039ed!2sIbadan!5e0!3m2!1sen!2sng!4v1690000000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
-
-          <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="NExDI Tech office and team environment" style="width:100%; border-radius:16px; margin-top:2rem; box-shadow:0 10px 30px rgba(0,0,0,0.08);">
-        </div>
+      <!-- Map -->
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.123456789!2d3.896!3d7.377!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwMjInMzcuMiJOIDPCsDUzJzQ1LjYiRQ!5e0!3m2!1sen!2sng!4v1690000000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </section>
 
-    <!-- CTA -->
+    <!-- Call to Action -->
     <section class="cta">
-      <h2>Ready to Work Together?</h2>
+      <h2>Ready to Collaborate?</h2>
       <p style="font-size:1.3rem; max-width:700px; margin:0 auto 2.5rem;">
-        Whether it's an internship, partnership, project, or question — we'd love to hear from you.
+        Whether you're looking for internships, tech solutions, training programs, or partnerships — let's talk.
       </p>
-      <a href="#main-content" class="btn" style="background:white; color:var(--primary);">Send a Message</a>
+      <a href="mailto:info@nexditech.com" style="background:white; color:var(--primary); padding:1rem 2.5rem; border-radius:8px; text-decoration:none; font-weight:600; box-shadow:0 4px 15px rgba(0,0,0,0.1);">Email Us Now</a>
     </section>
 
   </main>
@@ -368,8 +367,23 @@
     +234 701 064 6417 | info@nexditech.com</p>
   </footer>
 
-  <!-- Font Awesome for icons (optional) -->
-  <script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script>
+  <!-- Mobile Menu Script -->
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const overlay = document.getElementById('overlay');
+    const closeBtn = mobileMenu.querySelector('.hamburger');
+
+    function toggleMenu() {
+      mobileMenu.classList.toggle('active');
+      overlay.style.opacity = mobileMenu.classList.contains('active') ? '1' : '0';
+      overlay.style.visibility = mobileMenu.classList.contains('active') ? 'visible' : 'hidden';
+    }
+
+    hamburger.addEventListener('click', toggleMenu);
+    closeBtn.addEventListener('click', toggleMenu);
+    overlay.addEventListener('click', toggleMenu);
+  </script>
 
 </body>
 </html>

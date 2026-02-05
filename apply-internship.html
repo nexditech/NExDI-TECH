@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Forgot your NExDI Tech password? Enter your email to reset it and regain access to your account."/>
-  <title>Forgot Password – NExDI Tech | Ibadan</title>
+  <meta name="description" content="Apply for internship at NExDI Tech – AI, robotics, software development, digital training opportunities in Ibadan, Nigeria."/>
+  <title>Apply for Internship – NExDI Tech | Ibadan</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,7 +28,7 @@
       font-family: 'Inter', system-ui, sans-serif;
       line-height: 1.7;
       color: var(--dark);
-      background: #f8fafc;
+      background: #fff;
     }
 
     .skip-link {
@@ -140,81 +140,93 @@
       margin: 1.5rem 0;
       padding: 1rem;
       border-radius: 8px;
-      transition: var(--transition);
     }
 
     .mobile-menu a:hover { background: var(--light); }
 
-    main { 
-      padding-top: 100px; 
-      min-height: calc(100vh - 200px); 
-      display: flex; 
-      align-items: center; 
-    }
+    main { padding-top: 100px; }
 
-    .forgot-container {
-      max-width: 480px;
-      width: 90%;
-      margin: 0 auto;
-      background: white;
-      padding: 3rem 2.5rem;
-      border-radius: 16px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-    }
-
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.8rem;
+    .hero {
+      padding: 140px 5% 80px;
       text-align: center;
-      margin-bottom: 1.5rem;
-      color: var(--dark);
+      background: linear-gradient(135deg, #f0f7ff 0%, #e6fff5 100%);
     }
 
-    .form-group {
-      margin-bottom: 1.8rem;
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 8vw, 4.5rem);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero p.lead {
+      font-size: clamp(1.1rem, 4vw, 1.3rem);
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      color: var(--gray);
+    }
+
+    .section {
+      padding: clamp(60px, 10vw, 100px) 5%;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 6vw, 3.2rem);
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    form {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     }
 
     label {
       display: block;
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.5rem;
       font-weight: 500;
       font-size: 1rem;
     }
 
-    input {
+    input, textarea, select {
       width: 100%;
       padding: 0.9rem;
+      margin-bottom: 1.5rem;
       border: 1px solid var(--border);
       border-radius: 8px;
       font-size: 1rem;
     }
 
-    .btn-reset {
+    input[type="file"] {
+      padding: 0.5rem 0;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    button[type="submit"] {
       background: var(--primary);
       color: white;
-      padding: 1rem;
+      padding: 1rem 2.5rem;
       border: none;
       border-radius: 8px;
       font-weight: 600;
       cursor: pointer;
-      width: 100%;
       transition: var(--transition);
+      width: 100%;
+      max-width: 300px;
+      margin: 1rem auto;
+      display: block;
     }
 
-    .btn-reset:hover {
+    button[type="submit"]:hover {
       background: var(--primary-dark);
-    }
-
-    .back-to-login {
-      text-align: center;
-      margin-top: 2rem;
-      color: var(--gray);
-    }
-
-    .back-to-login a {
-      color: var(--primary);
-      text-decoration: none;
-      font-weight: 600;
     }
 
     .form-success {
@@ -227,28 +239,24 @@
       display: none;
     }
 
-    .note {
-      background: var(--light);
-      padding: 1.2rem;
-      border-radius: 12px;
-      margin: 2rem 0;
-      font-size: 0.95rem;
-      color: var(--gray);
-      border-left: 4px solid var(--primary);
+    .cta {
+      text-align: center;
+      padding: 80px 5%;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
     }
 
     footer {
       background: var(--dark);
       color: white;
       text-align: center;
-      padding: 3rem 5% 2rem;
-      margin-top: 4rem;
+      padding: 4rem 5% 2rem;
     }
 
     @media (max-width: 900px) {
       .hamburger { display: block; }
       .nav-links { display: none; }
-      .forgot-container { padding: 2.5rem 2rem; }
+      .hero { padding: 120px 5% 80px; }
     }
   </style>
 </head>
@@ -265,8 +273,12 @@
 
       <div class="nav-links">
         <a href="index.html">Home</a>
-        <a href="login.html">Login</a>
-        <a href="signup.html">Sign Up</a>
+        <a href="about us.html">About</a>
+        <a href="service.html">Services</a>
+        <a href="apply-internship.html">Internships</a>
+        <a href="contact us.html">Contact</a>
+        <a href="login.html">login</a>
+
       </div>
 
       <button class="hamburger" aria-label="Toggle navigation menu">&#9776;</button>
@@ -277,42 +289,82 @@
   <div class="mobile-menu" id="mobileMenu">
     <button class="hamburger" style="position:absolute; top:1.5rem; right:1.5rem;" aria-label="Close menu">&times;</button>
     <a href="index.html">Home</a>
-    <a href="login.html">Login</a>
-    <a href="signup.html">Sign Up</a>
+    <a href="about us.html">About</a>
+    <a href="service.html">Services</a>
+    <a href="apply-internship.html">Internships</a>
+    <a href="contact us.html">Contact</a>
+    <a href="login.html">login</a>
+
   </div>
 
   <main id="main-content">
 
     <section class="hero">
-      <h1>Forgot Your Password?</h1>
-      <p class="lead">Enter your email address and we'll send you a link to reset your password.</p>
+      <h1>Apply for Internship</h1>
+      <p class="lead">Join NExDI Tech and gain real-world experience in AI, robotics, software development, and digital innovation.</p>
     </section>
 
     <section class="section">
-      <div class="forgot-container">
-        <form id="forgot-form">
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" required placeholder="your.email@nexditech.com">
-          </div>
+      <div style="max-width:700px; margin:0 auto;">
+        <h2>Internship Application Form</h2>
+        <p style="text-align:center; margin-bottom:2rem; color:var(--gray);">
+          Please fill out the form below. All fields marked * are required.<br>
+          We respect your privacy — your information will only be used for internship evaluation.
+        </p>
 
-          <div class="note">
-            We'll send a password reset link to this email. If you don't see it, check your spam/junk folder.
-          </div>
+        <form action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data">
+          <input type="hidden" name="access_key" value="7899a8eb-b8c4-49f6-a828-34c796b11587">
+          <input type="hidden" name="subject" value="New Internship Application - NExDI Tech">
 
-          <button type="submit" class="btn-reset">Send Reset Link</button>
+          <label for="full-name">Full Name *</label>
+          <input type="text" id="full-name" name="full_name" required placeholder="Your full name">
+
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+
+          <label for="phone">Phone Number *</label>
+          <input type="tel" id="phone" name="phone" required placeholder="+234 ...">
+
+          <label for="field">Interested Field *</label>
+          <select id="field" name="field" required>
+            <option value="">Select field</option>
+            <option value="AI & Software Development">AI & Software Development</option>
+            <option value="Robotics & Automation">Robotics & Automation</option>
+            <option value="Digital Skills Training">Digital Skills Training</option>
+            <option value="Tech Consulting & Setups">Tech Consulting & Setups</option>
+            <option value="Other">Other (specify below)</option>
+          </select>
+
+          <label for="duration">Preferred Internship Duration *</label>
+          <select id="duration" name="duration" required>
+            <option value="">Select duration</option>
+            <option value="3 months">3 months</option>
+            <option value="6 months">6 months</option>
+            <option value="Flexible">Flexible / Other</option>
+          </select>
+
+          <label for="cv">Upload CV / Resume * (PDF, DOC, max 5MB)</label>
+          <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required>
+
+          <label for="cover-letter">Cover Letter / Why NExDI Tech? *</label>
+          <textarea id="cover-letter" name="cover_letter" rows="6" required placeholder="Tell us about yourself, your skills, and why you'd like to intern at NExDI Tech..."></textarea>
+
+          <button type="submit">Submit Application</button>
+
+          <div class="form-success" id="success-message">
+            <h3>Thank You!</h3>
+            <p>Your application has been received. We'll review it and get back to you soon.</p>
+          </div>
         </form>
-
-        <div class="form-success" id="success-message">
-          <h3>Reset Link Sent!</h3>
-          <p>Check your email (including spam/junk) for the password reset link.</p>
-          <p>It expires in 1 hour for security.</p>
-        </div>
-
-        <div class="back-to-login">
-          Remember your password? <a href="login.html">Back to Login</a>
-        </div>
       </div>
+    </section>
+
+    <section class="section" style="text-align:center;">
+      <h2>Why Intern at NExDI Tech?</h2>
+      <p style="font-size:1.2rem; max-width:800px; margin:0 auto 2rem;">
+        Real projects • Mentorship from experienced professionals • Hands-on learning • Certificate upon completion • Potential full-time opportunities
+      </p>
+      <a href="contact us.html" style="background:var(--primary); color:white; padding:1rem 2.5rem; border-radius:8px; text-decoration:none; font-weight:600;">Have Questions? Contact Us</a>
     </section>
 
   </main>
@@ -340,14 +392,13 @@
     closeBtn.addEventListener('click', toggleMenu);
     overlay.addEventListener('click', toggleMenu);
 
-    // Simple client-side form handling (replace with real backend later)
-    document.getElementById('forgot-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-
-      // Here you would normally call your backend (Supabase, Firebase, Web3Forms, etc.)
-      // For now, just show success message
-      document.getElementById('success-message').style.display = 'block';
-      this.reset();
+    // Form success message (client-side)
+    document.querySelector('form').addEventListener('submit', function(e) {
+      // Don't prevent default - let Web3Forms handle submission
+      setTimeout(() => {
+        document.getElementById('success-message').style.display = 'block';
+        this.reset();
+      }, 1000);
     });
   </script>
 

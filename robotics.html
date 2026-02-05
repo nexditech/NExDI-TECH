@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="NExDI Tech Robotics & Automation services – custom robots, prototyping, educational kits, industrial automation, and lab setups in Ibadan, Nigeria."/>
+  <title>Robotics & Automation – NExDI Tech</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #0d6efd;
+      --primary-dark: #0b5ed7;
+      --accent: #00d084;
+      --dark: #0f172a;
+      --gray: #64748b;
+      --light: #f8fafc;
+      --border: #e2e8f0;
+      --transition: all 0.4s ease;
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      line-height: 1.7;
+      color: var(--dark);
+      background: var(--light);
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 0;
+      background: var(--primary);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      z-index: 9999;
+      transition: top 0.3s;
+    }
+    .skip-link:focus { top: 0; }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background:black;
+      border-bottom: 1px solid var(--border);
+      z-index: 1000;
+    }
+
+    nav {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 1.25rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    .logo-img {
+      height: 60px;
+      width: auto;
+    }
+
+    .logo-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--gray);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover { color: var(--primary); }
+
+    main { padding-top: 100px; }
+
+    .hero {
+      padding: 140px 5% 100px;
+      text-align: center;
+      background: linear-gradient(135deg, #f0f7ff 0%, #e6fff5 100%);
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.6rem, 7vw, 4.8rem);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero p.lead {
+      font-size: clamp(1.2rem, 4vw, 1.5rem);
+      max-width: 800px;
+      margin: 0 auto 2.5rem;
+      color: var(--gray);
+    }
+
+    .section {
+      padding: 100px 5%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 6vw, 3.8rem);
+      text-align: center;
+      margin-bottom: 3rem;
+      color: var(--dark);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .feature-card {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      transition: var(--transition);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 20px 50px rgba(13,110,253,0.15);
+    }
+
+    .feature-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1.2rem;
+      color: var(--primary);
+    }
+
+    .feature-card p {
+      color: var(--gray);
+    }
+
+    .use-cases {
+      background: white;
+      padding: 3rem;
+      border-radius: 16px;
+      margin: 4rem 0;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    }
+
+    .use-cases h3 {
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+    }
+
+    .cta {
+      text-align: center;
+      padding: 80px 5%;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+    }
+
+    .cta h2 {
+      color: white;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn {
+      background: white;
+      color: var(--primary);
+      padding: 1.1rem 2.8rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.2rem;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+      transition: var(--transition);
+      display: inline-block;
+    }
+
+    .btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.3);
+    }
+
+    footer {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 4rem 5% 2rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero { padding: 120px 5% 80px; }
+      .section { padding: 80px 5%; }
+      .features-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      h1 { font-size: 2.6rem; }
+      h2 { font-size: 2.2rem; }
+      .btn { padding: 1rem 2rem; font-size: 1.05rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header>
+    <nav>
+      <div class="logo-container">
+        <img src="logo.png" alt="NExDI Tech logo" class="logo-img" onerror="this.style.display='none';">
+        <h1 class="logo-text"></h1>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about us.html">About</a>
+        <a href="service.html">Services</a>
+        <a href="apply-internship.html">Internships</a>
+        <a href="contact us.html">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <!-- Hero -->
+    <section class="hero">
+      <h1>Robotics & Automation</h1>
+      <p class="lead">From classroom robots to industrial automation — we build intelligent machines that move, think, and transform.</p>
+    </section>
+
+    <!-- Overview -->
+    <section class="section">
+      <h2>Powering the Next Generation of Intelligent Systems</h2>
+      <p style="font-size:1.2rem; text-align:center; max-width:900px; margin:0 auto 3rem; color:var(--gray);">
+        At NExDI Tech, we design, prototype, and deploy robotics solutions that bridge education, research, and industry. Whether you're teaching STEM, automating a factory, or exploring cutting-edge research — we deliver reliable, scalable robotics.
+      </p>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>Educational Robotics</h3>
+          <p>Hands-on kits, classroom robots, and curriculum-integrated programs that make robotics accessible and fun for students of all ages.</p>
+        </div>
+
+        <div class="feature-card">
+          <h3>Custom Robot Design & Prototyping</h3>
+          <p>From concept sketches to working prototypes — we build bespoke robots tailored to your specific needs and environment.</p>
+        </div>
+
+        <div class="feature-card">
+          <h3>Industrial Automation</h3>
+          <p>Robotic arms, conveyor systems, pick-and-place machines, and process automation that increase efficiency and reduce costs.</p>
+        </div>
+
+        <div class="feature-card">
+          <h3>Research & Lab Robotics</h3>
+          <p>Advanced platforms for universities, labs, and R&D teams — including sensor integration, computer vision, and autonomous navigation.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Use Cases -->
+    <section class="section" style="background:var(--light);">
+      <h2>Real-World Applications</h2>
+      <div class="use-cases">
+        <h3>Education & STEM Training</h3>
+        <p>Schools and universities use our robots to teach coding, electronics, mechanics, and problem-solving in engaging ways.</p>
+
+        <h3 style="margin-top:2rem;">Small & Medium Businesses</h3>
+        <p>Automate repetitive tasks — packaging, sorting, inspection — to save time and reduce human error.</p>
+
+        <h3 style="margin-top:2rem;">Research & Innovation Labs</h3>
+        <p>Build custom platforms for AI research, autonomous systems, human-robot interaction, and more.</p>
+
+        <h3 style="margin-top:2rem;">Agriculture & Logistics</h3>
+        <p>Robotic solutions for precision farming, warehouse automation, and supply chain optimization.</p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta">
+      <h2>Ready to Build Intelligent Machines?</h2>
+      <p style="font-size:1.3rem; max-width:700px; margin:0 auto 2.5rem;">
+        Whether it's a classroom robot, industrial arm, or research platform — let's create robotics that move Africa forward.
+      </p>
+      <a href="contact us.html" class="btn">Start Your Robotics Project</a>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 NExDI Tech – New Era Digital Innovation</p>
+    <p>123 Polo High Court, Ibadan, Oyo State, Nigeria</p>
+    <p>+234 701 064 6417 | info@nexditech.com</p>
+  </footer>
+
+</body>
+</html>

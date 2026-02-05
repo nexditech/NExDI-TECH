@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Log in to your NExDI Tech account – access internships, training resources, projects and digital innovation tools."/>
-  <title>Log In – NExDI Tech | New Era Digital Innovation</title>
+  <meta name="description" content="Login to your NExDI Tech account – Access internships, training, projects, and dashboard."/>
+  <title>Login – NExDI Tech | Digital Innovation Company</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,11 +28,7 @@
       font-family: 'Inter', system-ui, sans-serif;
       line-height: 1.7;
       color: var(--dark);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.65)), url('https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') center/cover no-repeat fixed;
-      background-attachment: fixed;
+      background: #f8fafc;
     }
 
     .skip-link {
@@ -48,15 +44,12 @@
     .skip-link:focus { top: 0; }
 
     header {
-        background:linear-gradient(135deg, var(--dark) 0%, #1e293b 100%);
-      color:white;
-      padding:1.2rem 5%;
-      position:fixed;
-      width:100%;
-      top:0;
-      z-index:2000;
-      box-shadow:0 4px 25px rgba(0,0,0,0.3);
-      transition:var(--transition);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: black;
+      border-bottom: 1px solid var(--border);
+      z-index: 1000;
     }
 
     nav {
@@ -67,10 +60,6 @@
       justify-content: space-between;
       align-items: center;
     }
-    .nav-links { display:flex; gap:2rem; list-style:none; margin:0; }
-    .nav-links a { color:white; text-decoration:none; font-weight:600; font-size:1.1rem; padding:0.8rem 1.2rem; border-radius:50px; transition:var(--transition); }
-    .nav-links a:hover, .nav-links a.active { background:rgba(255,255,255,0.15); }
-
 
     .logo-container {
       display: flex;
@@ -93,72 +82,113 @@
       text-decoration: none;
     }
 
-    main {
-      flex: 1;
+    .nav-links {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 140px 5% 80px;
+      gap: 2.5rem;
+      list-style: none;
     }
 
-    .login-box {
-      background: rgba(255,255,255,0.96);
-      backdrop-filter: blur(12px);
-      padding: 3rem 2.5rem;
-      border-radius: 20px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.25);
-      max-width: 480px;
-      width: 100%;
-      text-align: center;
-      border: 1px solid rgba(13,110,253,0.15);
+    .nav-links a {
+      color: var(--gray);
+      text-decoration: none;
+      font-weight: 500;
     }
 
-    .login-box h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-      margin-bottom: 0.8rem;
+    .nav-links a:hover { color: var(--primary); }
+
+    .hamburger {
+      display: none;
+      font-size: 2.2rem;
+      background: none;
+      border: none;
       color: var(--dark);
+      cursor: pointer;
+      z-index: 3000;
     }
 
-    .login-box .tagline {
-      font-size: 1.3rem;
-      font-style: italic;
-      color: var(--primary);
-      margin-bottom: 2rem;
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s;
+      z-index: 2500;
+    }
+
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 80%;
+      max-width: 320px;
+      height: 100%;
+      background: white;
+      padding: 6rem 2rem 2rem;
+      transition: right 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      z-index: 3000;
+      box-shadow: -10px 0 30px rgba(0,0,0,0.2);
+    }
+
+    .mobile-menu.active { right: 0; }
+
+    .mobile-menu a {
+      display: block;
+      color: var(--dark);
+      text-decoration: none;
+      font-size: 1.4rem;
+      margin: 1.5rem 0;
+      padding: 1rem;
+      border-radius: 8px;
+      transition: var(--transition);
+    }
+
+    .mobile-menu a:hover { background: var(--light); }
+
+    main { padding-top: 100px; min-height: calc(100vh - 200px); display: flex; align-items: center; }
+
+    .login-container {
+      max-width: 450px;
+      width: 90%;
+      margin: 0 auto;
+      background: white;
+      padding: 3rem 2.5rem;
+      border-radius: 16px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: var(--dark);
     }
 
     .form-group {
       margin-bottom: 1.8rem;
-      text-align: left;
     }
 
-    .form-group label {
+    label {
       display: block;
       margin-bottom: 0.6rem;
       font-weight: 500;
-      color: var(--dark);
-    }
-
-    .form-group input {
-      width: 100%;
-      padding: 0.95rem 1.3rem;
-      border: 1px solid var(--border);
-      border-radius: 10px;
       font-size: 1rem;
-      transition: border-color 0.3s, box-shadow 0.3s;
     }
 
-    .form-group input:focus {
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(13,110,253,0.15);
-      outline: none;
+    input {
+      width: 100%;
+      padding: 0.9rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 1rem;
     }
 
     .form-options {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin: 1rem 0 2rem;
+      margin: 1.5rem 0;
       font-size: 0.95rem;
     }
 
@@ -172,40 +202,29 @@
     .btn-login {
       background: var(--primary);
       color: white;
-      padding: 1rem 2.5rem;
+      padding: 1rem;
       border: none;
-      border-radius: 10px;
+      border-radius: 8px;
       font-weight: 600;
       cursor: pointer;
-      transition: var(--transition);
       width: 100%;
-      font-size: 1.1rem;
+      transition: var(--transition);
     }
 
     .btn-login:hover {
       background: var(--primary-dark);
-      transform: translateY(-2px);
     }
 
     .signup-link {
+      text-align: center;
       margin-top: 2rem;
-      font-size: 1rem;
       color: var(--gray);
     }
 
     .signup-link a {
       color: var(--primary);
-      font-weight: 600;
       text-decoration: none;
-    }
-
-    .signup-link a:hover { text-decoration: underline; }
-
-    .security-note {
-      margin-top: 2rem;
-      font-size: 0.9rem;
-      color: var(--gray);
-      text-align: center;
+      font-weight: 600;
     }
 
     footer {
@@ -213,12 +232,14 @@
       color: white;
       text-align: center;
       padding: 3rem 5% 2rem;
-      margin-top: auto;
+      margin-top: 4rem;
     }
 
-    @media (max-width: 768px) {
-      main { padding: 120px 5% 60px; }
-      .login-box { padding: 2.5rem 1.8rem; }
+    @media (max-width: 900px) {
+      .hamburger { display: block; }
+      .nav-links { display: none; }
+      .hero { padding: 120px 5% 80px; }
+      .login-container { padding: 2.5rem 2rem; }
     }
   </style>
 </head>
@@ -226,7 +247,6 @@
 
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- Header with logo -->
   <header>
     <nav>
       <div class="logo-container">
@@ -241,43 +261,54 @@
         <a href="apply-internship.html">Internships</a>
         <a href="contact us.html">Contact</a>
       </div>
+
+      <button class="hamburger" aria-label="Toggle navigation menu">&#9776;</button>
     </nav>
   </header>
 
+  <div class="overlay" id="overlay"></div>
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="hamburger" style="position:absolute; top:1.5rem; right:1.5rem;" aria-label="Close menu">&times;</button>
+    <a href="index.html">Home</a>
+    <a href="about us.html">About</a>
+    <a href="service.html">Services</a>
+    <a href="apply-internship.html">Internships</a>
+    <a href="contact us.html">Contact</a>
+  </div>
+
   <main id="main-content">
 
-    <div class="login-box">
-      <h1>Welcome Back</h1>
-      <p class="tagline">Advancing minds today for the innovations of tomorrow</p>
-      <p>Sign in to access your NExDI Tech dashboard, internships, training resources, and projects.</p>
+    <section class="hero">
+      <h1>Member Login</h1>
+      <p class="lead">Access your NExDI Tech dashboard, internships, training materials, and more.</p>
+    </section>
 
-      <form>
-        <div class="form-group">
-          <label for="email">Email Address</label>
-          <input type="email" id="email" name="email" required placeholder="your.email@example.com" autocomplete="email">
+    <section class="section">
+      <div class="login-container">
+        <form id="login-form">
+          <div class="form-group">
+            <label for="email">Email or Username</label>
+            <input type="text" id="email" name="email" required placeholder="your.email@nexditech.com">
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required placeholder="••••••••">
+          </div>
+
+          <div class="form-options">
+            <label><input type="checkbox" name="remember"> Remember me</label>
+            <a href="forgot-password.html">Forgot password?</a>
+          </div>
+
+          <button type="submit" class="btn-login">Login</button>
+        </form>
+
+        <div class="signup-link">
+          Don't have an account? <a href="signup.html">Sign up here</a>
         </div>
-
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input type="password" id="password" name="password" required placeholder="••••••••" autocomplete="current-password">
-        </div>
-
-        <div class="form-options">
-          <label><input type="checkbox" name="remember"> Remember me</label>
-          <a href="#">Forgot password?</a>
-        </div>
-
-        <button type="submit" class="btn-login">Log In</button>
-      </form>
-
-      <p class="signup-link">
-        Don't have an account? <a href="signup.html">Create one now</a>
-      </p>
-
-      <p class="security-note">
-        Your connection is secure. We use industry-standard encryption to protect your data.
-      </p>
-    </div>
+      </div>
+    </section>
 
   </main>
 
@@ -286,6 +317,24 @@
     123 Polo High Court, Ibadan, Oyo State, Nigeria<br>
     +234 701 064 6417 | info@nexditech.com</p>
   </footer>
+
+  <!-- Mobile Menu Script -->
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const overlay = document.getElementById('overlay');
+    const closeBtn = mobileMenu.querySelector('.hamburger');
+
+    function toggleMenu() {
+      mobileMenu.classList.toggle('active');
+      overlay.style.opacity = mobileMenu.classList.contains('active') ? '1' : '0';
+      overlay.style.visibility = mobileMenu.classList.contains('active') ? 'visible' : 'hidden';
+    }
+
+    hamburger.addEventListener('click', toggleMenu);
+    closeBtn.addEventListener('click', toggleMenu);
+    overlay.addEventListener('click', toggleMenu);
+  </script>
 
 </body>
 </html>

@@ -60,7 +60,6 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
     }
 
     .logo-container {
@@ -86,7 +85,7 @@
 
     .nav-links {
       display: flex;
-      gap: 2rem;
+      gap: 2.5rem;
       list-style: none;
     }
 
@@ -97,6 +96,59 @@
     }
 
     .nav-links a:hover { color: var(--primary); }
+
+    .hamburger {
+      display: none;
+      font-size: 2.2rem;
+      background: none;
+      border: none;
+      color: var(--dark);
+      cursor: pointer;
+      z-index: 3000;
+    }
+
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s;
+      z-index: 2500;
+    }
+
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 80%;
+      max-width: 320px;
+      height: 100%;
+      background: white;
+      padding: 6rem 2rem 2rem;
+      transition: right 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      z-index: 3000;
+      box-shadow: -10px 0 30px rgba(0,0,0,0.2);
+    }
+
+    .mobile-menu.active {
+      right: 0;
+    }
+
+    .mobile-menu a {
+      display: block;
+      color: var(--dark);
+      text-decoration: none;
+      font-size: 1.4rem;
+      margin: 1.5rem 0;
+      padding: 1rem;
+      border-radius: 8px;
+      transition: var(--transition);
+    }
+
+    .mobile-menu a:hover {
+      background: var(--light);
+    }
 
     main { padding-top: 100px; }
 
@@ -189,11 +241,12 @@
       padding: 4rem 5% 2rem;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
+      .hamburger { display: block; }
+      .nav-links { display: none; }
       .hero { padding: 120px 5% 80px; }
       .section { padding: 60px 5%; }
       .founder-image { max-width: 100%; }
-      .nav-links { display: none; } /* You can add hamburger later if needed */
     }
   </style>
 </head>
@@ -204,9 +257,8 @@
   <header>
     <nav>
       <div class="logo-container">
-        <!-- Company logo added here -->
         <img src="logo.png" alt="NExDI Tech company logo" class="logo-img" onerror="this.style.display='none';">
-        <h1 class="logo-text">NExDI Tech</h1>
+        <h1 class="logo-text"></h1>
       </div>
 
       <div class="nav-links">
@@ -215,9 +267,25 @@
         <a href="service.html">Services</a>
         <a href="apply-internship.html">Internships</a>
         <a href="contact us.html">Contact</a>
+        <a href="login.html">login</a>
+
       </div>
+
+      <button class="hamburger" aria-label="Toggle navigation menu">&#9776;</button>
     </nav>
   </header>
+
+  <div class="overlay" id="overlay"></div>
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="hamburger" style="position:absolute; top:1.5rem; right:1.5rem;" aria-label="Close menu">&times;</button>
+    <a href="index.html">Home</a>
+    <a href="about us.html">About</a>
+    <a href="service.html">Services</a>
+    <a href="apply-internship.html">Internships</a>
+    <a href="contact us.html">Contact</a>
+    <a href="login.html">login</a>
+
+  </div>
 
   <main id="main-content">
 
@@ -241,6 +309,7 @@
       </div>
     </section>
 
+    <!-- Vision & Mission -->
     <section class="section" style="background:var(--light);">
       <div class="content">
         <h2>Our Vision & Mission</h2>
@@ -249,6 +318,7 @@
       </div>
     </section>
 
+    <!-- Core Values -->
     <section class="section">
       <h2>Our Core Values (NExDI)</h2>
       <div class="values-grid">
@@ -275,13 +345,14 @@
       </div>
     </section>
 
+    <!-- Call to Action -->
     <section class="section" style="text-align:center;">
       <h2>Join the Movement</h2>
       <p style="font-size:1.3rem; max-width:700px; margin:0 auto 2.5rem;">
         The NExDI Tech story is still being written — and we want you to help write the next chapter.
       </p>
       <div style="display:flex; justify-content:center; gap:1.5rem; flex-wrap:wrap;">
-        <a href="internship.html" style="background:var(--primary); color:white; padding:1rem 2rem; border-radius:8px; text-decoration:none; font-weight:600;">Apply for Internship</a>
+        <a href="apply-internship.html" style="background:var(--primary); color:white; padding:1rem 2rem; border-radius:8px; text-decoration:none; font-weight:600;">Apply for Internship</a>
         <a href="contact us.html" style="border:2px solid var(--primary); color:var(--primary); padding:1rem 2rem; border-radius:8px; text-decoration:none; font-weight:600;">Get in Touch</a>
       </div>
     </section>
@@ -293,6 +364,24 @@
     123 Polo High Court, Ibadan, Oyo State, Nigeria<br>
     +234 701 064 6417 | info@nexditech.com</p>
   </footer>
+
+  <!-- Mobile Menu Script -->
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const overlay = document.getElementById('overlay');
+    const closeBtn = mobileMenu.querySelector('.hamburger');
+
+    function toggleMenu() {
+      mobileMenu.classList.toggle('active');
+      overlay.style.opacity = mobileMenu.classList.contains('active') ? '1' : '0';
+      overlay.style.visibility = mobileMenu.classList.contains('active') ? 'visible' : 'hidden';
+    }
+
+    hamburger.addEventListener('click', toggleMenu);
+    closeBtn.addEventListener('click', toggleMenu);
+    overlay.addEventListener('click', toggleMenu);
+  </script>
 
 </body>
 </html>

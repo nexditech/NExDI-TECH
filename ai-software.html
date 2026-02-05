@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Forgot your NExDI Tech password? Enter your email to reset it and regain access to your account."/>
-  <title>Forgot Password – NExDI Tech | Ibadan</title>
+  <meta name="description" content="NExDI Tech AI & Software Development services – Custom apps, AI integration, machine learning, web & mobile solutions in Ibadan, Nigeria."/>
+  <title>AI & Software Development – NExDI Tech | Ibadan</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,7 +28,7 @@
       font-family: 'Inter', system-ui, sans-serif;
       line-height: 1.7;
       color: var(--dark);
-      background: #f8fafc;
+      background: #fff;
     }
 
     .skip-link {
@@ -145,110 +145,98 @@
 
     .mobile-menu a:hover { background: var(--light); }
 
-    main { 
-      padding-top: 100px; 
-      min-height: calc(100vh - 200px); 
-      display: flex; 
-      align-items: center; 
-    }
+    main { padding-top: 100px; }
 
-    .forgot-container {
-      max-width: 480px;
-      width: 90%;
-      margin: 0 auto;
-      background: white;
-      padding: 3rem 2.5rem;
-      border-radius: 16px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-    }
-
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.8rem;
+    .hero {
+      padding: 140px 5% 100px;
       text-align: center;
+      background: linear-gradient(135deg, #f0f7ff 0%, #e6fff5 100%);
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 8vw, 4.8rem);
       margin-bottom: 1.5rem;
-      color: var(--dark);
     }
 
-    .form-group {
-      margin-bottom: 1.8rem;
+    .hero p.lead {
+      font-size: clamp(1.2rem, 4vw, 1.5rem);
+      max-width: 800px;
+      margin: 0 auto;
+      color: var(--gray);
     }
 
-    label {
-      display: block;
-      margin-bottom: 0.6rem;
-      font-weight: 500;
-      font-size: 1rem;
+    .section {
+      padding: clamp(60px, 10vw, 100px) 5%;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
-    input {
-      width: 100%;
-      padding: 0.9rem;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      font-size: 1rem;
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 6vw, 3.5rem);
+      text-align: center;
+      margin-bottom: 3rem;
     }
 
-    .btn-reset {
-      background: var(--primary);
-      color: white;
-      padding: 1rem;
-      border: none;
-      border-radius: 8px;
-      font-weight: 600;
-      cursor: pointer;
-      width: 100%;
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .feature-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
       transition: var(--transition);
     }
 
-    .btn-reset:hover {
-      background: var(--primary-dark);
+    .feature-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 20px 50px rgba(13,110,253,0.15);
     }
 
-    .back-to-login {
-      text-align: center;
-      margin-top: 2rem;
-      color: var(--gray);
+    .feature-image {
+      height: 220px;
+      background-size: cover;
+      background-position: center;
     }
 
-    .back-to-login a {
+    .feature-content {
+      padding: 2rem;
+    }
+
+    .feature-content h3 {
       color: var(--primary);
-      text-decoration: none;
-      font-weight: 600;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
     }
 
-    .form-success {
-      background: #e6fff5;
-      color: #006644;
-      padding: 1.5rem;
-      border-radius: 12px;
-      margin-top: 2rem;
-      text-align: center;
-      display: none;
-    }
-
-    .note {
-      background: var(--light);
-      padding: 1.2rem;
-      border-radius: 12px;
-      margin: 2rem 0;
-      font-size: 0.95rem;
+    .feature-content p {
       color: var(--gray);
-      border-left: 4px solid var(--primary);
+    }
+
+    .cta {
+      text-align: center;
+      padding: 80px 5%;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
     }
 
     footer {
       background: var(--dark);
       color: white;
       text-align: center;
-      padding: 3rem 5% 2rem;
-      margin-top: 4rem;
+      padding: 4rem 5% 2rem;
     }
 
     @media (max-width: 900px) {
       .hamburger { display: block; }
       .nav-links { display: none; }
-      .forgot-container { padding: 2.5rem 2rem; }
+      .hero { padding: 120px 5% 80px; }
+      .features-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -265,8 +253,12 @@
 
       <div class="nav-links">
         <a href="index.html">Home</a>
-        <a href="login.html">Login</a>
-        <a href="signup.html">Sign Up</a>
+        <a href="about us.html">About</a>
+        <a href="service.html">Services</a>
+        <a href="apply-internship.html">Internships</a>
+        <a href="contact us.html">Contact</a>
+        <a href="login.html">login</a>
+
       </div>
 
       <button class="hamburger" aria-label="Toggle navigation menu">&#9776;</button>
@@ -277,42 +269,67 @@
   <div class="mobile-menu" id="mobileMenu">
     <button class="hamburger" style="position:absolute; top:1.5rem; right:1.5rem;" aria-label="Close menu">&times;</button>
     <a href="index.html">Home</a>
-    <a href="login.html">Login</a>
-    <a href="signup.html">Sign Up</a>
+    <a href="about us.html">About</a>
+    <a href="service.html">Services</a>
+    <a href="apply-internship.html">Internships</a>
+    <a href="contact us.html">Contact</a>
+    <a href="login.html">login</a>
+
   </div>
 
   <main id="main-content">
 
     <section class="hero">
-      <h1>Forgot Your Password?</h1>
-      <p class="lead">Enter your email address and we'll send you a link to reset your password.</p>
+      <h1>AI & Software Development</h1>
+      <p class="lead">Building intelligent, scalable, and user-focused software solutions for businesses and innovators.</p>
     </section>
 
     <section class="section">
-      <div class="forgot-container">
-        <form id="forgot-form">
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" required placeholder="your.email@nexditech.com">
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-image" style="background-image: url('https://images.pexels.com/photos/17483873/pexels-photo-17483873/free-photo-of-an-artist-s-illustration-of-artificial-intelligence-ai-this-image-was-inspired-neural-networks-used-in-deep-learning-it-was-created-by-novoto-studio-as-part-of-the-visualising-ai-proje.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
+          <div class="feature-content">
+            <h3>Custom Web & Mobile Applications</h3>
+            <p>We develop high-performance, responsive web and mobile apps tailored to your exact business needs.</p>
+            <p>Technologies: React, Next.js, Flutter, React Native, Node.js, Laravel</p>
           </div>
-
-          <div class="note">
-            We'll send a password reset link to this email. If you don't see it, check your spam/junk folder.
-          </div>
-
-          <button type="submit" class="btn-reset">Send Reset Link</button>
-        </form>
-
-        <div class="form-success" id="success-message">
-          <h3>Reset Link Sent!</h3>
-          <p>Check your email (including spam/junk) for the password reset link.</p>
-          <p>It expires in 1 hour for security.</p>
         </div>
 
-        <div class="back-to-login">
-          Remember your password? <a href="login.html">Back to Login</a>
+        <div class="feature-card">
+          <div class="feature-image" style="background-image: url('https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
+          <div class="feature-content">
+            <h3>Artificial Intelligence & Machine Learning</h3>
+            <p>Integrate AI/ML into your products — chatbots, predictive analytics, computer vision, recommendation systems.</p>
+            <p>Technologies: Python, TensorFlow, PyTorch, Scikit-learn, Hugging Face</p>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-image" style="background-image: url('https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
+          <div class="feature-content">
+            <h3>Automation & Workflow Solutions</h3>
+            <p>Automate repetitive tasks, streamline operations, and reduce costs with custom tools and integrations.</p>
+            <p>Technologies: Zapier, Make (Integromat), Python scripting, API integrations</p>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-image" style="background-image: url('https://images.pexels.com/photos/3184296/pexels-photo-3184296.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
+          <div class="feature-content">
+            <h3>Cloud & DevOps Solutions</h3>
+            <p>Modern cloud architecture, CI/CD pipelines, scalable infrastructure, and secure deployments.</p>
+            <p>Technologies: AWS, Azure, Docker, Kubernetes, GitHub Actions</p>
+          </div>
         </div>
       </div>
+    </section>
+
+    <section class="section" style="text-align:center; background:linear-gradient(135deg, var(--primary), var(--accent)); color:white;">
+      <h2>Ready to Build Something Smart?</h2>
+      <p style="font-size:1.3rem; max-width:700px; margin:0 auto 2.5rem;">
+        Whether it's a new app, AI feature, automation tool, or full digital transformation — let's talk.
+      </p>
+      <a href="contact us.html" style="background:white; color:var(--primary); padding:1rem 2.5rem; border-radius:8px; text-decoration:none; font-weight:600; box-shadow:0 4px 15px rgba(0,0,0,0.2);">Get a Free Consultation</a>
     </section>
 
   </main>
@@ -339,16 +356,6 @@
     hamburger.addEventListener('click', toggleMenu);
     closeBtn.addEventListener('click', toggleMenu);
     overlay.addEventListener('click', toggleMenu);
-
-    // Simple client-side form handling (replace with real backend later)
-    document.getElementById('forgot-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-
-      // Here you would normally call your backend (Supabase, Firebase, Web3Forms, etc.)
-      // For now, just show success message
-      document.getElementById('success-message').style.display = 'block';
-      this.reset();
-    });
   </script>
 
 </body>
